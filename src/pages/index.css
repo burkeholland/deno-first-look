@@ -1,5 +1,5 @@
 body {
-  background-color: #eee;
+  background-color: #f9fafb;
 }
 
 .index {
@@ -75,7 +75,24 @@ body {
   max-width: 960px;
 }
 
+.navbar {
+  border-bottom: none;
+}
+
 .navbar-content {
   max-width: 960px;
   margin: auto;
+}
+
+p {
+  padding-top: 10px;
+}
+
+.gradient {
+  background: #222222;
+  /* background: linear-gradient(
+    to bottom,
+    rgb(15, 28, 51) 0%,
+    rgb(73, 88, 114) 100%
+  ); */
 }

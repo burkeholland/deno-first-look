@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter Course",
-    subtitle: "For making great content",
+    title: "Deno First Look",
+    subtitle: "An introduction to the Deno JavaScript runtime",
     description:
-      "This is the description that will show up when people share as well as on search engines",
+      "An introduction to the Deno JavaScript runtime",
     keywords: [
       "this is",
       "a list of keywords and phrase",

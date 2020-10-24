@@ -34,7 +34,7 @@ If you'd like to connect, you can [find me on Twitter](https://twitter.com/burke
 
 ## Why Was This Course Created?
 
-![Frontend Masters Logo](fem.png)
+![Frontend Masters Logo](images/FrontendMastersLogo.png)
 
 I think the key to staying sane in this industry is to always be open to learn new things. Learn to learn and forget as well. There is no idea that should be off the table when it comes to technology. Let's look at them all and pick the ones that work best for you, your brain, your team and your project.
 
