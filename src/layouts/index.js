@@ -68,12 +68,14 @@ const TemplateWrapper = props => {
               ]}
             />
             <div className="navbar navbar-light gradient">
-              <Link to="/" className="navbar-brand">
-                <h1>{data.site.siteMetadata.title}</h1>
-              </Link>
-              {!frontmatter ? null : (
-                <h2>{`${frontmatter.section} – ${frontmatter.title}`}</h2>
-              )}
+              <div class="navbar navbar-content">
+                <Link to="/" className="navbar-brand">
+                  <h1>{data.site.siteMetadata.title}</h1>
+                </Link>
+                {!frontmatter ? null : (
+                  <h2>{`${frontmatter.section} – ${frontmatter.title}`}</h2>
+                )}
+              </div>
             </div>
             <div className="main">{props.children}</div>
           </div>
