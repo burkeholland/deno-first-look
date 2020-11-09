@@ -1,5 +1,5 @@
 ---
-path: "/why-oh-why"
+path: "/what-is/why-oh-why"
 title: "Why"
 order: "2A"
 description: "Why oh why do we need another JavaScript runtime?"

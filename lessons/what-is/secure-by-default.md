@@ -1,5 +1,5 @@
 ---
-path: "/secure-by-default"
+path: "/what-is/secure-by-default"
 title: "Secure By Default"
 order: "2B"
 description: "Deno runtime is secure by default. This is in stark contrast to how Node works today, and it's important to understand why so that Deno's default locked down state doesn't feel so oppressive."
@@ -84,7 +84,7 @@ Now that's pretty bad, but it can get much, much worse.
 
 In preparing for this course, I ran across a headline from zdnet...
 
-![](./images/zdnet.jpg)
+![](../images/zdnet.jpg)
 
 "You should consider your entire system compromised".
 

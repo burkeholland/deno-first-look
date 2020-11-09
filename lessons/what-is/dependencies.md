@@ -1,5 +1,5 @@
 ---
-path: "/dependency-hell"
+path: "/what-is/dependency-hell"
 title: "Dependency Hell"
 order: "2C"
 description: "Burke looks at what the current state of dependencies in Node.js is, and why Deno has a fundamentally different approach."

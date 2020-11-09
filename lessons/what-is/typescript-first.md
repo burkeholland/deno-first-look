@@ -1,5 +1,5 @@
 ---
-path: "/typescript-first"
+path: "/what-is/typescript-first"
 title: "TypeScript First"
 order: "2D"
 description: "Burke talks about why TypeScript plays an enormous role in how Deno thinks about how applications should be built."
@@ -8,7 +8,7 @@ section: "What is Deno"
 
 Deno supports TypeScript as a first-class citizen. In fact, if you look at the Deno project, you'll see that it's standard library is written in TypeScript.
 
-![](images/stdlib-typescript.jpg)
+![](../images/stdlib-typescript.jpg)
 
 The TypeScript compiler is part of the runtime, and there is no need to transpile to JavaScript before you run a file.
 
@@ -46,11 +46,11 @@ const client = new cosmos.CosmosClient("");
 
 Notice that when you open the parens on "CosmosClient", VS Code suggests the parameter and parameter types. It also shows that this constructor is overloaded. That means that you can pass different numbers or types of parameters to initialize the object. One is initialized with a string, and the other is initialized as an object.
 
-![](images/cosmos-options.jpg)
+![](../images/cosmos-options.jpg)
 
 Even better, TypeScript knows what options go in that object, what their types are, and whether or not they are required.
 
-![](images/options-options.jpg)
+![](../images/options-options.jpg)
 
 Selecting an option in the intellisense tells you what it's type is and the ? on the end tells you if it's required or not.
 
