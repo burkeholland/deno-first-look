@@ -1,7 +1,7 @@
 ---
 path: "/dependencies/local-dependencies.md"
 title: "Local dependencies"
-order: "5B"
+order: "4B"
 section: "Understanding Dependencies"
 description: "Burke dives into how Deno handles dependencies."
 ---

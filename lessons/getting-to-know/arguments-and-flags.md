@@ -1,14 +1,10 @@
 ---
 path: "/getting-to-know/arguments-and-flags"
-title: "CLI - Arguments and Flags"
-order: "3C"
+title: "CLI Tour"
+order: "3E"
 section: "Getting to know Deno"
 description: "Burke looks at how to pass arguments and flags to the Deno CLI"
 ---
-
-> If you get stuck, switch to the "deno-arguments" branch for the solution.
-
-## Built-in Arguments
 
 For a full list of arguments you can pass to Deno, execute `deno -h`.
 

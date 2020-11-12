@@ -1,7 +1,7 @@
 ---
 path: "/permissions/determining-permissions"
 title: "Determining Permissions"
-order: "4D"
+order: "5D"
 section: "Permissions"
 description: "Burke explores the unique permissions model of Deno."
 ---

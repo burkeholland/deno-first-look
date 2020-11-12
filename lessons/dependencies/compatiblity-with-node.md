@@ -1,7 +1,7 @@
 ---
 path: "/dependencies/compatibility-with-node.md"
 title: "Compatibility With Node"
-order: "5E"
+order: "4E"
 section: "Understanding Dependencies"
 description: "Burke dives into how Deno handles dependencies."
 ---

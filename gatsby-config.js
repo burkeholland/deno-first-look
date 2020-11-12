@@ -2,8 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Deno First Look",
     subtitle: "An introduction to the Deno JavaScript runtime",
-    description:
-      "An introduction to the Deno JavaScript runtime",
+    description: "An introduction to the Deno JavaScript runtime",
     keywords: [
       "this is",
       "a list of keywords and phrase",
@@ -49,7 +48,7 @@ module.exports = {
         forceBase64Format: ``, // valid formats: png,jpg,webp
         useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
         stripMetadata: true,
-        defaultQuality: 50,
+        defaultQuality: 100,
         failOnError: true,
       },
     },

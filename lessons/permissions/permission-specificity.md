@@ -1,7 +1,7 @@
 ---
 path: "/permissions/permission-specificity"
 title: "Permission Specificity"
-order: "4C"
+order: "5C"
 section: "Permissions"
 description: "Burke explores the unique permissions model of Deno."
 ---

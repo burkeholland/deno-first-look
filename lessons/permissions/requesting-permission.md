@@ -1,7 +1,7 @@
 ---
 path: "/permissions/requesting-permissions"
 title: "Requesting Permissions"
-order: "4B"
+order: "5B"
 section: "Permissions"
 description: "Burke explores the unique permissions model of Deno."
 ---

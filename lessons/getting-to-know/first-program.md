@@ -1,7 +1,7 @@
 ---
-path: "/getting-to-know/deno-run"
+path: "/getting-to-know/first-program"
 title: "Your first program"
-order: "3B"
+order: "3D"
 section: "Getting to know Deno"
 description: "Burke goes over how to write your first program with Deno and execute it with the Deno CLI."
 ---

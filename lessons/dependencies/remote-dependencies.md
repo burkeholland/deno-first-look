@@ -1,7 +1,7 @@
 ---
 path: "/dependencies/remote-dependencies.md"
 title: "Remote dependencies"
-order: "5C"
+order: "4C"
 section: "Understanding Dependencies"
 description: "Burke dives into how Deno handles dependencies."
 ---

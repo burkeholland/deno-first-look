@@ -1,7 +1,7 @@
 ---
 path: "/permissions/granting-permissions"
 title: "Granting Permissions"
-order: "4A"
+order: "5A"
 section: "Permissions"
 description: "Burke explores the unique permissions model of Deno."
 ---

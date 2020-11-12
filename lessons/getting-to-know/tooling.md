@@ -1,7 +1,7 @@
 ---
 path: "/getting-to-know/tooling"
 title: "Tooling"
-order: "3E"
+order: "3B"
 section: "Getting to know Deno"
 description: "Burke covers how to install Deno, and takes a look at the Deno CLI, REPL and what options you need to be aware of."
 ---
