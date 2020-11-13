@@ -1,5 +1,5 @@
 ---
-path: "oak/introducing-oak"
+path: "/oak/introducing-oak"
 title: "Introducing Oak"
 order: "7A"
 section: "Oak web framework"
