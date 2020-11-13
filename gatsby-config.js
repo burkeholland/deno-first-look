@@ -10,7 +10,7 @@ module.exports = {
       "will index your page for",
     ],
   },
-  //pathPrefix: "/my-repo-name", // if you're using GitHub Pages, put the name of the repo here with a leading slash
+  pathPrefix: "/deno-first-look",
   plugins: [
     `gatsby-plugin-layout`,
     {
