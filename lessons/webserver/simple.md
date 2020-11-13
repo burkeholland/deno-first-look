@@ -1,5 +1,5 @@
 ---
-path: "/nuilding/simple"
+path: "/webserver/simple"
 title: "Building a simple webserver"
 order: "6A"
 section: "Building a Webserver"
@@ -77,37 +77,8 @@ Returning text isn't terribly useful, so instead, return some HTML.
 
     ```app.ts
     for await (const req of server) {
-    req.respond({
-      body: "<h1>Hello World</h1>",
-    });
-
-    }
-    ```
-
-## Parsing query parameters
-
-Let's modify the HTML to return a hello message to whatever name we pass in as a query string parameter. To do that, we're going to need to look for the query string parameters on the req object.
-
-    ```typescript
-    for await (const req of server) {
-        const name = new URLSearchParams(req.url.substring(1)).get("name");
         req.respond({
-            body: `<h1>${name}</h1>`
+          body: "<h1>Hello World</h1>",
         });
     }
     ```
-
-The `req.url` object contains the URL fragment. If we look at it
-
-That works, but it's not really the best way to go about returning HTML. It would be better if we built the HTML in a separate file and sent that file instead of just sending text.
-
-- Create a new file called "index.html"
-- Place the following code in that file
-
-  ```html
-
-  ```
-
-```
-
-```

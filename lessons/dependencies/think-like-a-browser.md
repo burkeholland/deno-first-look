@@ -17,3 +17,11 @@ Deno tries to stay as close to browser conventions as possible everywhere that i
 Deno works the same way. You require in dependencies by URL. If you are requiring a local dependency, it's just the relative path. If you are using a third-party library, you do it by the URL.
 
 Deno follows the [ECMAScript standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) for `import/export` syntax.
+
+## Caching
+
+Caching is an important part of how Deno handles dependencies. Since it uses the URL reference as the method to inlcude them, you wouldn't want it to try and download those everytime you ran the program.
+
+Instead, Deno downloads a dependency the first time that you run the program and until the dependency changes or you force an update, that cache is where the dependency is served from.
+
+How Deno handles dependencies is different based on whether or not you are using a local dependency (importing a file in the current project) or a remote dependency (referencing a third-party module by URL). In the next few sections, we'll look at how Deno handles these two scenarios, and some best practices for organizing dependenices in Deno.
