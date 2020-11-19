@@ -1,6 +1,6 @@
 ---
-path: "/oak/oak-router"
-title: "The Oak Router"
+path: "/oak/oak-templates"
+title: "Templates"
 order: "7C"
 section: "Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
