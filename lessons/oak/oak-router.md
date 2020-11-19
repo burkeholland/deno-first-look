@@ -6,6 +6,8 @@ section: "Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
+> Make sure you are on the oak-router branch and ensure that you are working in the "exercise" folder. If you get stuck, you can find the completed code for this section in the "solution" folder of the same branch.
+
 Oak contains prebuild Router middleware that will allow you to handle different routes, parameters and queries. It's basically doing a lot of string parsing and pattern matching that you would otherwise have to do yourself.
 
 - Include the "Router" object in the Oak import.
@@ -128,45 +130,42 @@ In order to specify routes in the route files, we need a reference to the router
 
   ```typescript
   import { Router } from "deps.ts";
-  const router = new Router();
+  ```
+
+- Create a function called "use" which will accept a path and a route. We'll use that path and route to configure all of the index routes.
+
+  ```typescript
+  import { Context, Router } from "../deps.ts";
+
+  export function use(path: string, router: Router) {}
   ```
 
 - Move the index route to this new "indexRouter.ts" file
 
   ```typescript
-  import { Router } from "../deps.ts";
+  import { Context, Router } from "../deps.ts";
+  import hbs from "../shared/hbs.ts";
 
-  const router = new Router();
-
-  router.get("/", (ctx) => {
-    ctx.response.body = "Welcome to Oak";
-  });
+  export function use(path: string, router: Router) {
+    router.get(`${path}`, async (ctx: Context) => {
+      ctx.response.body = "Welcome to Oak";
+    });
+  }
   ```
 
-- Export the router as the default.
-
-  ```typescript
-  import { Router } from "../deps.ts";
-  const router = new Router();
-
-  router.get("/", (ctx) => {
-    ctx.response.body = "Welcome to Oak";
-  });
-
-  export default router;
-  ```
+  We use the "path" variable and append all routes to that object. That's so that we can specify the path in the "app.ts" file for all our routers. As we add more and more routers, it's going to be important to know what router is handling what path by just by looking at the "app.ts" file.
 
 - Import the new file as `indexRouter` at the top of the "app.ts" file
 
   ```typescript
   import { Application, Router } from "./deps.ts";
-  import indexRouter from "./routes/indexRouter.ts";
+  import * as indexRouter from "./routes/indexRouter.ts";
   ```
 
-- Tell the `app` object to use the `indexRouter` routes.
+- Tell the router to the "/" path and the existing "router" object.
 
   ```typescript
-  app.use(indexRouter.routes());
+  indexRouter.use("/path", router);
   ```
 
 - Run the app again to make sure the index route still works.
@@ -175,13 +174,14 @@ In order to specify routes in the route files, we need a reference to the router
 
   ```typescript
   import { Application, Router } from "./deps.ts";
-  import indexRouter from "./routes/indexRouter.ts";
-  import userRouter from "./routes/userRouter.ts";
+  import * as indexRouter from "./routes/indexRouter.ts";
+  import * as userRouter from "./routes/userRouter.ts";
 
   const app = new Application();
+  const router = new Router();
 
-  app.use(indexRouter.routes());
-  app.use(userRouter.routes());
+  indexRouter.use("/", router);
+  usersRouter.use("/users", router);
 
   console.log(`Now listening on http://0.0.0.0:3000`);
   await app.listen("0.0.0.0:3000");

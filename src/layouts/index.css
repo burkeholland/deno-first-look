@@ -149,3 +149,11 @@
   border: 1px solid #666;
   border-radius: 5px;
 }
+
+blockquote {
+  margin-top: 20px;
+  background-color: #FDF6E3;
+  padding: 0px 10px;
+  
+  border: 1px solid #FDF6E3;
+}
