@@ -124,88 +124,93 @@
   </a>
     </span></p>
 <h2 id="import-handlebars-into-the-oak-project" style="position:relative;"><a href="#import-handlebars-into-the-oak-project" aria-label="import handlebars into the oak project permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Import Handlebars into the Oak project</h2>
-<ul>
-<li>
-<p>Add an import for the Handlebars library to the <code class="language-text">deps.ts</code> file. Make sure you export "Handlebars"</p>
+<p>First, we need to import the Handlebars library into our "deps.ts" file. Don't forget to export it at the bottom as well!</p>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Application<span class="token punctuation">,</span> Router <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"https://deno.land/x/oak/mod.ts"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> Handlebars <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"https://deno.land/x/handlebars/mod.ts"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token punctuation">{</span> Application<span class="token punctuation">,</span> Router<span class="token punctuation">,</span> Handlebars <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
-</li>
-</ul>
 <blockquote>
 <p>I find it interesting that while Deno aims to avoid centralizing dependencies, it has effectively done so by creating this repository at deno.land/x. We may very well see npm again by another name.</p>
 </blockquote>
-<p>To use the Handlebars library, we need to initialize an instance and pass in some configuration. To do this, we'll create a shared object that the routers can import and then use to return template rendered views.</p>
-<ul>
-<li>Create a folder in the root of the project called "shared"</li>
-<li>Create a file inside called "hbs.ts"</li>
-<li>
-<p>Import Handlebars from the "deps.ts" file</p>
+<p>To use the Handlebars library, we need to initialize an instance and pass in some configuration. To do this, we'll create a shared object that the routers can import and then use to return template rendered views. Even though we're importing a file that calles "new" multiple times, the same instance should be reused as it is cached by the runtime.</p>
+<p>Let's create a root folder called "shared" and add an "hbs.ts" file inside. In that file, we'll need to import the Handlebars dependency from our "deps.ts" file.</p>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Handlebars <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../deps.ts"</span><span class="token punctuation">;</span></code></pre></div>
-</li>
-<li>
 <p>Create a new instance of the Handlebars class and pass in the following configuration object. Export the new instance.</p>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Handlebars <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../deps.ts"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> handlebars <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Handlebars</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-baseDir<span class="token operator">:</span> <span class="token string">"views"</span><span class="token punctuation">,</span>
-extname<span class="token operator">:</span> <span class="token string">".hbs"</span><span class="token punctuation">,</span>
-layoutsDir<span class="token operator">:</span> <span class="token string">"layouts/"</span><span class="token punctuation">,</span>
-partialsDir<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-defaultLayout<span class="token operator">:</span> <span class="token string">"main"</span><span class="token punctuation">,</span>
-helpers<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
-compilerOptions<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+  baseDir<span class="token operator">:</span> <span class="token string">"views"</span><span class="token punctuation">,</span>
+  extname<span class="token operator">:</span> <span class="token string">".hbs"</span><span class="token punctuation">,</span>
+  layoutsDir<span class="token operator">:</span> <span class="token string">"layouts/"</span><span class="token punctuation">,</span>
+  partialsDir<span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  defaultLayout<span class="token operator">:</span> <span class="token string">"main"</span><span class="token punctuation">,</span>
+  helpers<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+  compilerOptions<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token keyword">export</span> <span class="token keyword">default</span> handlebars<span class="token punctuation">;</span></code></pre></div>
-</li>
-</ul>
 <p>These options are all the defaults with the exception of the empty string for the <code class="language-text">partialsDir</code> option. This is because we won't be using partial views for this course and if we don't override the default value (<code class="language-text">partials/</code>), a "file not found" error will be thrown by the Handlebars library.</p>
-<p>Before we can actually use these templates, we need to create them.</p>
-<ul>
-<li>Add a folder to the exercise root project called "views"</li>
-<li>Add a "layouts" directory in the "views" directory</li>
-<li>Create a "main.hbs" file in the "views/layouts" directory</li>
-<li>
-<p>Add the following HTML to the "main.hbs" file</p>
+<p>Before we can actually use these templates, we need to create them. Create a new folder in the exercise project root called "views". First, we need a Layout. A Layout is the shell of the page. It is the main HTML page into which all of our other files will be rendered. Add a "layouts" folder to the "views" directory. Create a "main.hbs" file in the "views/layouts" directory, and add the following markup.</p>
 <div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Oak<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-  {{{ body }}}
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Oak<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    {{{ body }}}
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre></div>
 <p>This file serves as the main layout template. The <code class="language-text">{{{ body }}}</code> is where we'll render different views depending on which URL is requested.</p>
-</li>
-<li>Create an "index.hbs" file in the "views" folder.</li>
-<li>
-<p>Add the following markup</p>
+<p>Now we need an "index" template to correspond with our "/" (index) route. We'll be passing in a "title" to the template from our code. Create an "index.hbs" file in the "views" folder and add the following markup.</p>
 <div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>{{ title }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Welcome to {{ title }}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre></div>
 <p>This fragment will be rendered where the <code class="language-text">{{{ body }}}</code> tag is in the "main.hbs" file.</p>
-</li>
-<li>
-<p>Import "shared/hbs.ts" in the "indexRoutes.ts" file.</p>
+<p>Last, we need to render our templates and tell Oak to return them as the response. To do that, we first need to import the shared "hbs.ts" file into the "indexRoutes.ts" file.</p>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Router <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../deps.ts"</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> hbs <span class="token keyword">from</span> <span class="token string">"../shared/hbs.ts"</span><span class="token punctuation">;</span></code></pre></div>
-</li>
-</ul>
-<p>-- Call the <code class="language-text">renderView</code> method on the <code class="language-text">hbs</code> object to render the view as the body response.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">```typescript
-import { Router } from &quot;../deps.ts&quot;;
-import hbs from &quot;../shared/hbs.ts&quot;;
+<p>Now, instead of returning text to the <code class="language-text">ctx.response.body</code>, call the <code class="language-text">hbs.renderView</code> method. You'll need to pass in the name of the template that you want to render (index) and any data that the template needs. In our case, it's just a "title" property.</p>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Router <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"../deps.ts"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> hbs <span class="token keyword">from</span> <span class="token string">"../shared/hbs.ts"</span><span class="token punctuation">;</span>
 
-export function use(path: string, router: Router) {
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">use</span><span class="token punctuation">(</span>path<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> router<span class="token operator">:</span> Router<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  
+  router<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>path<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token keyword">await</span> hbs<span class="token punctuation">.</span><span class="token function">renderView</span><span class="token punctuation">(</span><span class="token string">"index"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> title<span class="token operator">:</span> <span class="token string">"Oak"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  router.get(`${path}`, async (ctx) =&gt; {
-    ctx.response.body = await hbs.renderView(&quot;index&quot;, { title: &quot;Oak&quot; });
-  });
-
-}
-```</code></pre></div>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Now run the application again and see what you get. </p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/deno-first-look/static/4252c7b580ac2a15c59a033bdc755f5f/67200/app-with-templates.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 38.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wgARCAAIABQDAREAAhEBAxEB/8QAFgAAAwAAAAAAAAAAAAAAAAAAAQMJ/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAABvCESf//EABkQAAIDAQAAAAAAAAAAAAAAAAABBAUVAv/aAAgBAQABBQJQIz4zq8yq0//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8Bf//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8Bf//EACUQAAADBgYDAAAAAAAAAAAAAAECAwAEERIhcSQyMzRRUpPR0v/aAAgBAQAGPwIpVkUVpeyRAC8mSMOAs2ydfAn8sOBda10Sem//xAAaEAEBAQEAAwAAAAAAAAAAAAABESExABBh/9oACAEBAAE/IXmTUVLIREBQgHQV9XtVoqqbzLgzhD55/9oADAMBAAIAAwAAABCCf//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8Qf//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8Qf//EABcQAQEBAQAAAAAAAAAAAAAAAAERIQD/2gAIAQEAAT8QRqg0aYkhJdTt0MKiSuiBQpIQx1Aqv//Z'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="application running returning template"
+        title="application running returning template"
+        src="/deno-first-look/static/4252c7b580ac2a15c59a033bdc755f5f/a24e6/app-with-templates.jpg"
+        srcset="/deno-first-look/static/4252c7b580ac2a15c59a033bdc755f5f/a6b4f/app-with-templates.jpg 200w,
+/deno-first-look/static/4252c7b580ac2a15c59a033bdc755f5f/a6407/app-with-templates.jpg 400w,
+/deno-first-look/static/4252c7b580ac2a15c59a033bdc755f5f/a24e6/app-with-templates.jpg 800w,
+/deno-first-look/static/4252c7b580ac2a15c59a033bdc755f5f/67200/app-with-templates.jpg 961w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>OK! Not super impressive to look at, but we're now handling routing and returning dynamic templates. The next thing we need to do is style this page with some CSS. To do that, we need to figure out how to get Oak to return static files from a directory in our project. That's exactly what we'll do in the next section.</p>
 <p><strong>Bonus</strong> - Create a "users" template and handle the view rendering in the "userRoutes.ts" file.</p></div><div class="lesson-links"><a class="prev" href="/deno-first-look/oak/oak-router">← The Oak Router</a><a class="next" href="/deno-first-look/oak/simple-oak">Servering Static Files →</a></div></div></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/oak/oak-templates";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-6fc754e12cb0264185f4.js"],"app":["/app-0525a1c152d709795228.js"],"component---src-pages-404-js":["/component---src-pages-404-js-6b7331439c0e22937641.js"],"component---src-pages-index-js":["/component---src-pages-index-js-067fa294325e7ab7b4a8.js"],"component---src-templates-lesson-template-js":["/component---src-templates-lesson-template-js-7ed797bf39332f15176c.js"]};/*]]>*/</script><script src="/deno-first-look/polyfill-6fc754e12cb0264185f4.js" nomodule=""></script><script src="/deno-first-look/component---src-templates-lesson-template-js-7ed797bf39332f15176c.js" async=""></script><script src="/deno-first-look/app-0525a1c152d709795228.js" async=""></script><script src="/deno-first-look/framework-6b40266ad63d0bc0fb45.js" async=""></script><script src="/deno-first-look/styles-407fe62976dc5310c43e.js" async=""></script><script src="/deno-first-look/webpack-runtime-a4f893802085df5ab943.js" async=""></script></body></html>
