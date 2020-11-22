@@ -10,30 +10,32 @@ One of the most common use-cases for a JavaScript runtime is a web server. Web s
 
 The Deno standard library contains a `server` module that lets you implement in a web server in just a few lines of code.
 
-- In the `app.ts` file, import the `server` module from the Deno standard library.
+first, import the `server` module from the Deno standard library into the "app.ts" file.
 
-  ```typescript
-  import { serve } from "https://deno.land/std/http/server.ts";
-  ```
+```typescript
+import { serve } from "https://deno.land/std/http/server.ts";
+```
 
-- Define `HOSTNAME` and `PORT` constants. For the `HOSTNAME`, we'll use 0.0.0.0, which is the same as saying "localhost" or "127.0.0.1", but is more compatible with things like Docker.
+Next, we'll, define `HOSTNAME` and `PORT` constants. For the `HOSTNAME`, we'll use 0.0.0.0, which is the same as saying "localhost" or "127.0.0.1", but is more compatible with things like Docker.
 
-  ```typescript
-  import { serve } from "https://deno.land/std/http/server.ts";
-  const PORT = 3000;
-  const HOSTNAME = "0.0.0.0";
-  ```
+```typescript
+import { serve } from "https://deno.land/std/http/server.ts";
+const PORT = 3000;
+const HOSTNAME = "0.0.0.0";
+```
 
-- Use the `serve` function to create a new server object passing in the hostname and port constants.
+The only thing you need from the `server` library is the `serve` function. All you need to do is call that function and pass in the hostname and port to get a new server instance.
 
-  ```typescript
-  import { serve } from "https://deno.land/std/http/server.ts";
+```typescript
+import { serve } from "https://deno.land/std/http/server.ts";
 
-  const PORT = 3000;
-  const HOSTNAME = "0.0.0.0";
+const PORT = 3000;
+const HOSTNAME = "0.0.0.0";
 
-  const server = serve({ hostname: HOSTNAME, port: PORT });
-  ```
+const server = serve({ hostname: HOSTNAME, port: PORT });
+```
+
+The server is now started and listening. But it doesn't do anything because we aren't handling any requests. As awkward as this may seem, we're going to run an infinite `for` loop and handle any request that comes in by setting the `respond` property 
 
 - Use a `for` loop to start the server and listen for any incoming request. The body contains a simple response of "Hello World".
 
