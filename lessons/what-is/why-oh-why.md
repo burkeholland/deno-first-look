@@ -10,9 +10,11 @@ Deno is a command-line runtime for JavaScript. This means that it allows JavaScr
 
 If you've been writing JavaScript for a while, you are probably familiar with an existing runtime that already does this, called, "Node".
 
-![](node-log.png)
+![](../images/node-logo.png)
 
 "Deno" is an anagram for Node. It is literally the letters in "Node" rearranged to make a different word. This is not an inconsequential detail. If you were going to build a completely new runtime command-line runtime for JavaScript, why would you use the name Node, and just mix up the letters? If it's not Node, then why not call it something entirely different?
+
+![deno anagram of node logo](../images/node-deno.png)
 
 In order to understand this, we need to first address a different question, which is why, oh why, do we need yet another runtime environment?
 
