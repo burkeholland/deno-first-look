@@ -35,33 +35,33 @@ const HOSTNAME = "0.0.0.0";
 const server = serve({ hostname: HOSTNAME, port: PORT });
 ```
 
-The server is now started and listening. But it doesn't do anything because we aren't handling any requests. As awkward as this may seem, we're going to run an infinite `for` loop and handle any request that comes in by setting the `respond` property 
+The server is now started and listening. But it doesn't do anything because we aren't handling any requests. As awkward as this may seem, we're going to run an infinite `for` loop and handle any request that comes in by setting the `respond` property on the request.
 
-- Use a `for` loop to start the server and listen for any incoming request. The body contains a simple response of "Hello World".
+Use a `for` loop to start the server and listen for any incoming request. The body contains a simple response of "Hello World".
 
-  ```typescript
-  import { serve } from "https://deno.land/std/http/server.ts";
+```typescript
+import { serve } from "https://deno.land/std/http/server.ts";
 
-  const PORT = 3000;
-  const HOSTNAME = "0.0.0.0";
+const PORT = 3000;
+const HOSTNAME = "0.0.0.0";
 
-  const server = serve({ hostname: HOSTNAME, port: PORT });
+const server = serve({ hostname: HOSTNAME, port: PORT });
 
-  console.log(`Server is now running on: http://${HOSTNAME}:${PORT}`);
+console.log(`Server is now running on: http://${HOSTNAME}:${PORT}`);
 
-  for await (const req of server) {
-    req.respond({
-      body: "Hello World",
-    });
-  }
-  ```
+for await (const req of server) {
+  req.respond({
+    body: "Hello World",
+  });
+}
+```
 
-- Run the program with `deno run app.ts`. It should tell you that permission is denied and that the `allow-net` flag is required.
+Run the program with `deno run app.ts`. It should tell you that permission is denied and that the `allow-net` flag is required.
 
-  ```bash
-  Check file:///home/burkeholland/dev/deno-first-look-exercises/app.ts
-  error: Uncaught PermissionDenied: network access to "0.0.0.0:3000", run again with the --allow-net flag
-  ```
+```bash
+Check file:///home/burkeholland/dev/deno-first-look-exercises/app.ts
+error: Uncaught PermissionDenied: network access to "0.0.0.0:3000", run again with the --allow-net flag
+```
 
 Run the program again with the `allow-net` flag. Be sure to restrict the access to only port 3000.
 
@@ -77,10 +77,10 @@ The server should now be running on port 3000. When you visit it in the browser,
 
 Returning text isn't terribly useful, so instead, return some HTML.
 
-    ```app.ts
-    for await (const req of server) {
-        req.respond({
-          body: "<h1>Hello World</h1>",
-        });
-    }
-    ```
+```app.ts
+for await (const req of server) {
+    req.respond({
+      body: "<h1>Hello World</h1>",
+    });
+}
+```

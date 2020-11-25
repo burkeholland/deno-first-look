@@ -88,10 +88,10 @@ In preparing for this course, I ran across a headline from zdnet...
 
 "You should consider your entire system compromised".
 
-That's heavy. And it can happen to anyone. And if you read into that article, because Node has so much freedom, even uninstalling the module doens't mean you are safe, because who knows what these packages installed and ran in the background?
+That's heavy. And it can happen to anyone. And if you read that article, it says that even uninstalling the module doens't mean you are safe. Because who knows what these packages installed and ran in the background?
 
-Node.js is simply not a safe runtime. It is wide open and is based on a wide open package system. While that makes is super convenient to use, it is by definition also relatively easy for seriously bad things to happen to your programs, even when you are paying close attention.
+Node.js is simply not a safe runtime. It is wide open and is based on a wide open package system. While that makes is super convenient to use, it is by definition also relatively easy for seriously bad things to happen to your programs, even when you are paying close attention. There is a direct trade-off between convenience and security. Node has optimized for convenience.
 
-Deno is secure by default. That means that by default, programs have no access to read your file system, make an http call or perform other I/O related activities on your machine. You have to explicitly grant it access. We'll see how this works when we get into the syntax of Deno.
+Deno is secure by default. That means that by default, programs have no access to read your file system, make an http call or perform other I/O related activities on your machine. You have to explicitly grant it access. We'll see how this works when we get into the syntax of Deno. You'll also get to see this tradeoff of convenience in action and decide for yourself whether or not "secure by default" should in fact be the default.
 
 Now this doesn't guarantee that you will be safe, but it makes it much harder for you to be victimized. It starts from a position of safety, and then asks you to opt out of that. Secure by default.
