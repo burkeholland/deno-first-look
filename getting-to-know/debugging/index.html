@@ -53,35 +53,27 @@
         }
       }
     })
-  </script><link as="script" rel="preload" href="/deno-first-look/webpack-runtime-a4f893802085df5ab943.js"/><link as="script" rel="preload" href="/deno-first-look/styles-407fe62976dc5310c43e.js"/><link as="script" rel="preload" href="/deno-first-look/framework-6b40266ad63d0bc0fb45.js"/><link as="script" rel="preload" href="/deno-first-look/app-0525a1c152d709795228.js"/><link as="script" rel="preload" href="/deno-first-look/component---src-templates-lesson-template-js-7ed797bf39332f15176c.js"/><link as="fetch" rel="preload" href="/deno-first-look/page-data/getting-to-know/debugging/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/deno-first-look/page-data/sq/d/2959687377.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/deno-first-look/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div class="navbar navbar-light gradient"><div class="navbar navbar-content"><a class="navbar-brand" href="/deno-first-look/"><h1>Deno First Look</h1></a><h2>Getting to know Deno – Debugging</h2></div></div><div class="main"><div class="lesson-container"><div class="lesson"><h1>Debugging</h1><h2></h2><div class="lesson-content"><p>Deno apps can be debugged either from the browser, or with VS Code. Much like Node, Deno has <code class="language-text">--inspect</code> and <code class="language-text">--inspect-brk</code> flags. The <code class="language-text">--inspect</code> flag starts the program and listens for the debugger. The <code class="language-text">--inspect-brk</code> does the same thing except that it automatically breaks on the first line of the program.</p>
+  </script><link as="script" rel="preload" href="/deno-first-look/webpack-runtime-a4f893802085df5ab943.js"/><link as="script" rel="preload" href="/deno-first-look/styles-407fe62976dc5310c43e.js"/><link as="script" rel="preload" href="/deno-first-look/framework-6b40266ad63d0bc0fb45.js"/><link as="script" rel="preload" href="/deno-first-look/app-0525a1c152d709795228.js"/><link as="script" rel="preload" href="/deno-first-look/component---src-templates-lesson-template-js-7ed797bf39332f15176c.js"/><link as="fetch" rel="preload" href="/deno-first-look/page-data/getting-to-know/debugging/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/deno-first-look/page-data/sq/d/2959687377.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/deno-first-look/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div class="navbar navbar-light gradient"><div class="navbar navbar-content"><a class="navbar-brand" href="/deno-first-look/"><h1>Deno First Look</h1></a><h2>Getting to know Deno – Debugging</h2></div></div><div class="main"><div class="lesson-container"><div class="lesson"><h1>Debugging</h1><h2></h2><div class="lesson-content"><blockquote>
+<p>Before you start this section, make sure you are on the "debugging" branch in the "exercise" folder. If you get stuck, check the "solution" folder for the completed code.</p>
+</blockquote>
+<p>Deno apps can be debugged either from the browser, or with VS Code. Much like Node, Deno has <code class="language-text">--inspect</code> and <code class="language-text">--inspect-brk</code> flags. The <code class="language-text">--inspect</code> flag starts the program and listens for the debugger. The <code class="language-text">--inspect-brk</code> does the same thing except that it automatically breaks on the first line of the program.</p>
 <p>When a process is in debug mode, you can attach to it with browser dev tools to provide a robust debugging experience.</p>
 <h2 id="using-the-browser-dev-tools" style="position:relative;"><a href="#using-the-browser-dev-tools" aria-label="using the browser dev tools permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the browser dev tools</h2>
-<ul>
-<li>
-<p>Make sure the <code class="language-text">app.ts</code> file contains the following code as we left it in the last module...</p>
+<p>This should work in any Chromium based browser - including Chrome itself and Microsoft Edge.</p>
+<p>First, make sure the <code class="language-text">app.ts</code> file contains the following code as we left it in the last module...</p>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> message<span class="token operator">:</span> String <span class="token operator">=</span> Deno<span class="token punctuation">.</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-</li>
-<li>
-<p>Run the program passing in the <code class="language-text">--inspect</code> flag</p>
+<p>Run the program as you normally would, but this time, pass in the <code class="language-text">--inspect</code> flag</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">deno run --inspect app.ts World</code></pre></div>
-</li>
-</ul>
-<p>The program runs to completion and you never have a chance to debug it. This is because you don't have the chance to set a breakpoint. The solution to this is to use the <code class="language-text">--inspect-brk</code> flag instead.</p>
-<ul>
-<li>
-<p>Run the program again, this time passing in the <code class="language-text">--inspect-brk</code> flag</p>
+<p>Passing the <code class="language-text">--inspect</code> flag opens the debugger port. However, the program runs to completion and you never have a chance to debug it. This is because you haven't set any breakpoints and your code has no errors. The solution to this is to use the <code class="language-text">--inspect-brk</code> flag instead.</p>
+<p>Run the program again, this time passing in the <code class="language-text">--inspect-brk</code> flag...</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">deno run --inspect-brk app.ts World</code></pre></div>
-</li>
-</ul>
 <p>This time, the program runs, and then pauses. Now you can attach your browser developer tools to the running program.</p>
 <h2 id="attach-with-browser-dev-tools" style="position:relative;"><a href="#attach-with-browser-dev-tools" aria-label="attach with browser dev tools permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Attach with browser dev tools</h2>
 <blockquote>
 <p>Note that this requires a Chromium-based browser such as Chrome or Edge</p>
 </blockquote>
-<ul>
-<li>
-<p>Open a browser tab and navigate to <code class="language-text">chrome://inspect</code>.</p>
+<p>All you need here is an open browser tab. Navigate to <code class="language-text">chrome://inspect</code> or <code class="language-text">edge://inspect</code>. Both will work. In Edge, typing <code class="language-text">chrome://inspect</code> will take you to <code class="language-text">edge://inspect</code>.</p>
 <p>The browser should automatically see your running program and list it as a "target" as shown below. Click the "inspect" link.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -113,8 +105,6 @@
       />
   </a>
     </span></p>
-</li>
-</ul>
 <p>This will open the browser dev tools and you will see the your program is broken on the first line...</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -147,8 +137,6 @@
       />
   </a>
     </span></p>
-<ul>
-<li>
 <p>Step over to the next line and hover over the <code class="language-text">Deno.args</code> object. You can see the "World" argument that was passed in.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -181,9 +169,10 @@
       />
   </a>
     </span></p>
-</li>
-<li>Click the continue button to finish execution and then close the Dev Tools</li>
-</ul>
+<p>Click the continue button to finish execution and then close the Dev Tools.</p>
+<blockquote>
+<p>Noe that at the time of this writing, this does not work with WSL2 as Chrome/Edge looks for Deno source code in //home/, which is not a valid path on Windows.</p>
+</blockquote>
 <h2 id="debugging-with-vs-code" style="position:relative;"><a href="#debugging-with-vs-code" aria-label="debugging with vs code permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debugging with VS Code</h2>
 <p>The Deno extension for VS Code includes a debugger. It also knows how to automatically configure a <code class="language-text">launch.config</code> with the correct settings to launch the program with <code class="language-text">--inspect</code> and attach the VS Code debugger.</p>
 <ul>
