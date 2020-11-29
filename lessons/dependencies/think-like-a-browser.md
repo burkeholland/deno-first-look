@@ -25,3 +25,21 @@ Caching is an important part of how Deno handles dependencies. Since it uses the
 Instead, Deno downloads a dependency the first time that you run the program and until the dependency changes or you force an update, that cache is where the dependency is served from.
 
 How Deno handles dependencies is different based on whether or not you are using a local dependency (importing a file in the current project) or a remote dependency (referencing a third-party module by URL). In the next few sections, we'll look at how Deno handles these two scenarios, and some best practices for organizing dependenices in Deno.
+
+## Getting Dependency Info
+
+As we move through the next sections, the `deno info` command may come in quite useful. By itself, the command returns the location of your Deno cache. Try it out and see what you get...
+
+```bash
+deno info
+```
+
+Here's what I get...
+
+```bash
+DENO_DIR location: "/home/burkeholland/.cache/deno"
+Remote modules cache: "/home/burkeholland/.cache/deno/deps"
+TypeScript compiler cache: "/home/burkeholland/.cache/deno/gen"
+```
+
+We'll be looking at these directories going forward. If you get stuck or can't find the cache, a simple `deno info` should get you there.

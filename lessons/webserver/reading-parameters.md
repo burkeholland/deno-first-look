@@ -69,4 +69,83 @@ http://localhost:3000?name=World
 
 The browser should return whatever name you pass in. If not, you should get a 500 error with a messae saying that a "name" parameter is required.
 
-This all works, but we don't normally serve HTML this way. Normally we serve up actual HTML files. Let's take a look at how to do that.
+## Route Parameters
+
+But what about route parameters? Query strings are simple enough, but how can we parse out a route parameter such as "/name"? We can do that, but we'll need more than what Deno offers with its standard library. And, unfortunately, we'll need more than what we can from it's current third-party library offerings as well.
+
+But what about npm?
+
+Let's do a quick check. Yep - looks like there is a library ready to go that will parse route parameters for us no problem. This is why Node is so great. Every problem is one package install away. Or maybe that's the problem with Node. I'll let you decide.
+
+In any event, we're going to get a chance to see how we can use Node modules in our program.
+
+### Using Node Dependencies
+
+We can use _some_ Node modules in Deno. If they have strong Node dependencies, they probably won't work. But this one says it's isomorphic. That means that it works in Node and in the browser. If it works in the browser, there is a high probability it will work in Deno.
+
+But how do we import a Node module into Deno? What is the URL for a Node module.
+
+There are a few services out there that will allow you to import a package from npm via URL. One of them is called "unpkg". Unfortunately, this won't work for us in Deno and that's because of the fact that Deno only supports ES modules. A lot of Node modules predate that syntax and offer CommonJS `module.exports` syntax. Let's look at this "route-parser" code what it's doing. If you visit the "lib" folder in the repo and look at the ["route.js"](https://github.com/rcs/route-parser/blob/master/lib/route.js) file. The last line says...
+
+```javascript
+module.exports = Route;
+```
+
+That's CommonJS. It's not going to work with Deno. So what do we do? Well, believe it or not there is a service called "jspm" which will take a module by URL and give you an ES Module compatible import/export. All we have to do is run this module through that service and it will let us import the module...
+
+```typescript
+import routeParser from "https://dev.jspm.io/route-parser@0.0.5";
+```
+
+But we've got TypeScript here. Which means we need type definitions to use this library. How do we import those?
+
+First, the types have to exist. Fortunately for us, searching for "route parser types" in npm will reveal that the "DefinitelyTyped" library has typings for "route parser".
+
+We need this file served up raw. In that case, the "unpkg" service will work just fine...
+
+```typescript
+import routeParser from "https://dev.jspm.io/route-parser@0.0.5";
+import RouteParser from "https://unpkg.com/@types/route-parser@0.1.3/index.d.ts";
+```
+
+Now we just need to tell TypeScript that `routeParser` is type of `RouterParser`...
+
+```typescript
+import routeParser from "https://dev.jspm.io/route-parser@0.0.5";
+import RouteParser from "https://unpkg.com/@types/route-parser@0.1.3/index.d.ts";
+
+const Route = routeParser as typeof RouteParser;
+```
+
+And now we can use it just like the "route-parser" docs show. Let's return the name if we find it and if not, return a static "404.html" page.
+
+```typescript
+import { serve } from "https://deno.land/std/http/server.ts";
+import { serveFile } from "https://deno.land/std/http/file_server.ts";
+
+import routeParser from "https://dev.jspm.io/route-parser@0.0.5";
+import RouteParser from "https://unpkg.com/@types/route-parser@0.1.3/index.d.ts";
+
+const Route = routeParser as typeof RouteParser;
+
+const PORT = 3000;
+const HOSTNAME = "0.0.0.0";
+
+const server = serve({ hostname: HOSTNAME, port: PORT });
+
+console.log(`Server is now running on: http://${HOSTNAME}:${PORT}`);
+
+const route = new Route("/:name");
+
+for await (const req of server) {
+  const match: any = route.match(req.url);
+  if (match.name) {
+    req.respond({ body: `Hello, ${match.name}` });
+  } else {
+    const html = await serveFile(req, "404.html");
+    req.respond(html);
+  }
+}
+```
+
+As you can see - it's a little hacky. It's not the best solution, but it _does_ work. It also shows you what it's like to import type definitions for a file that isn't TypeScript.
