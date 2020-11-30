@@ -28,7 +28,7 @@ The last time I did a course, I got a lot of PR's on mistakes made throughout. M
 
 ![Yours truly at the Badlands in South Dakota](images/me.jpg)
 
-My name is Burke Holland, and I am a Content Engineer at Microsoft, where I do advocacy around GitHub, VS Code and all things JavaScript. I also have a cursor on my face.
+My name is Burke Holland, and I am a Content Engineer at Microsoft, where I do advocacy around VS Code, GitHUb, Azure and all things JavaScript. I have a cursor on my face.
 
 I work with a team of great people and together we try and make Microsoft tools, services and runtimes the best place in the world for JavaScript developers. I've been a JavaScript developer for 12 years. That's a long time in the world of JavaScript. I first fell in love with it when jQuery came out, and I have never looked back. I love everything about JavaScript, and I've never tired of writing it. I think it's a magical language that is uniquely easy to get started with and bizarrely well suited for applications of all types.
 
