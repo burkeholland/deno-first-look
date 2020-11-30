@@ -1,2 +1,2 @@
-order,title,link0,link1
-1A,Introduction,https://twitter.com/burkeholland,mailto:burkeholland@gmail.com
+order,title,link0,link1,link2,link3,link4,link5,link6
+1A,Introduction,https://channel9.msdn.com/posts/Anders-Hejlsberg-Introducing-TypeScript,https://github.com/burkeholland/deno-first-look/pulls,https://github.com/burkeholland/deno-first-look/issues,https://medium.com/counter-intuition/overcoming-impostor-syndrome-bdae04e46ec5,https://twitter.com/burkeholland,mailto:burkeholland@gmail.com,https://frontendmasters.com/courses/customize-vs-code/
