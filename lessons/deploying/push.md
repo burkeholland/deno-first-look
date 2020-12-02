@@ -1,6 +1,6 @@
 ---
 path: "/oak/deploying"
-title: "Pushing the Deno container to a registry"
+title: "Pushing the Deno image to a registry"
 order: "8B"
 section: "Deploying"
 description: "Burke looks at how to deploy an application built with Deno"
