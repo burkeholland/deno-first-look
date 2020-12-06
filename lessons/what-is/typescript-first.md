@@ -20,7 +20,7 @@ You may not agree with that, and that's ok. I don't know that I necessarily do m
 
 ## Structure and standardization
 
-One of the beatiful things about JavaScript is that there is no _right_ way to do it. Everyone organizes their projects differently. Some people use classes and some don't. Some people use objects to store collections and some people use arrays. If you remember the book - The Lorax - JavaScript is like a thneed. It is whatever you need it to be.
+One of the beautiful things about JavaScript is that there is no _right_ way to do it. Everyone organizes their projects differently. Some people use classes and some don't. Some people use objects to store collections and some people use arrays. If you remember the book - The Lorax - JavaScript is like a thneed. It is whatever you need it to be.
 
 This is also one of the drawbacks. It makes it harder for organizations to standardize on JavaScript because they have to invent their own patterns.
 
@@ -96,7 +96,7 @@ We often mitigate this in VS Code with the setting "files.exclude" and then usin
 
 This has the side-effect of hiding the actual code files though. And furthermore, you need a watch process to make sure the underlying JavaScript is up to date. If you get out of date, you can spend a lot of time trying to figure out why something isn't working and it's because your watch process stopped running or some other error.
 
-When you deploy this app, the TypeScript needs to be built into JavaScript and then you don't need the TypeScript anymore and don't really want it on your production server. So what we often do is specify an output directy for the JavaScript and now we've got our project split into source and build directories.
+When you deploy this app, the TypeScript needs to be built into JavaScript and then you don't need the TypeScript anymore and don't really want it on your production server. So what we often do is specify an output directly for the JavaScript and now we've got our project split into source and build directories.
 
 In the .tsconfig file, change the "outDir" to "dist".
 

@@ -112,4 +112,4 @@ This time the terminal will log out "This is middleware". But the request never 
 
 This time, the terminal logs out the message and then the page is returned.
 
-You can write pieces of middleware that can be passed to the `app.use` function. One of these pieces of middleware that we'll be using is the Deno router. In the next section we'll look at how to implement the rouer middleware for Deno.
+You can write pieces of middleware that can be passed to the `app.use` function. One of these pieces of middleware that we'll be using is the Deno router. In the next section we'll look at how to implement the router middleware for Deno.

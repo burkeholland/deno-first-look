@@ -39,9 +39,9 @@ undefined
 >
 ```
 
-That outputs "Hello World" because we did the console.log, and then it prints "undefined" because that's the return value of the console.log method. Every method in JavaScript returns a result - even if you don't explicity do it.
+That outputs "Hello World" because we did the console.log, and then it prints "undefined" because that's the return value of the console.log method. Every method in JavaScript returns a result - even if you don't explicitly do it.
 
-Like the Node.js REPL, the Deno REPL will automatically add new lines when it sees that you are trying to write a multline program. Try creating a new function which takes in a parameter and then outputs that with the world "Hello" in front. Then return the input parameter as the output.
+Like the Node.js REPL, the Deno REPL will automatically add new lines when it sees that you are trying to write a multiline program. Try creating a new function which takes in a parameter and then outputs that with the world "Hello" in front. Then return the input parameter as the output.
 
 ```bash
 >function hello(who) {

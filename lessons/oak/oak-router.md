@@ -72,7 +72,7 @@ You should see the same thing you had before - a simple page saying "Hello Oak".
   });
   ```
 
-- Add a third route which also listens to the "/users" route, but listens for an additional "/name" param and echos the value back out.
+- Add a third route which also listens to the "/users" route, but listens for an additional "/name" param and echoes the value back out.
 
   ```typescript
   router.get("/", (ctx) => {

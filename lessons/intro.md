@@ -14,7 +14,7 @@ The objective of this course is to help you understand what Deno is, why on eart
 
 ## Who Are You?
 
-You should be a JavaScript developer with knowledge of Node.js. It's likely that if you're doing JavaScript development these days, that's a given. Node.js is used by most people in at least a development capacity - running local web servers, linting tools, ect. If you are using Node.js in production to host applications such as websites, services, microservices, ect, then this course is especially applicable to you. Many of the exercises we'll go through in this course will specifically compare to functionality or libraries that exist today in Node.
+You should be a JavaScript developer with knowledge of Node.js. It's likely that if you're doing JavaScript development these days, that's a given. Node.js is used by most people in at least a development capacity - running local web servers, linting tools, etc. If you are using Node.js in production to host applications such as websites, services, microservices, etc, then this course is especially applicable to you. Many of the exercises we'll go through in this course will specifically compare to functionality or libraries that exist today in Node.
 
 TypeScript is also a plus, but not required. We don't spend a lot of time getting into types or messing with TypeScript paticulars like interfaces, modules or the compiler details. There is quite a bit of that in Deno, but my feeling is that it adds a layer of confusion that isn't necessary to understand and be productive with Deno. It's also extremely off-putting if you don't know TypeScript, and I don't want to put you off. I want to excite you.
 
@@ -28,7 +28,7 @@ The last time I did a course, I got a lot of PR's on mistakes made throughout. M
 
 ![Yours truly at the Badlands in South Dakota](images/me.jpg)
 
-My name is Burke Holland, and I am a Content Engineer at Microsoft, where I do advocacy around VS Code, GitHUb, Azure and all things JavaScript. I have a cursor on my face.
+My name is Burke Holland, and I am a Content Engineer at Microsoft, where I do advocacy around VS Code, GitHub, Azure and all things JavaScript. I have a cursor on my face.
 
 I work with a team of great people and together we try and make Microsoft tools, services and runtimes the best place in the world for JavaScript developers. I've been a JavaScript developer for 12 years. That's a long time in the world of JavaScript. I first fell in love with it when jQuery came out, and I have never looked back. I love everything about JavaScript, and I've never tired of writing it. I think it's a magical language that is uniquely easy to get started with and bizarrely well suited for applications of all types.
 
@@ -38,7 +38,7 @@ I love teaching because it's simply the best way to learn something. It also let
 
 _Image Credit:_ [Alica Liu](https://medium.com/counter-intuition/overcoming-impostor-syndrome-bdae04e46ec5)
 
-I live in Nashville with my wife, 3 teenage boys and 2 pugs. I'm a huge fan of Overwatch and I main Wrecking Ball. I know a lot of people don't like Wrecking Ball and they tell me all the time when we lose. I'm also an amature craftsman, having built several pieces of modest furniture and doing remodel projects when my wife has new ideas for the house. There is a lot in common with woodworking and coding. Or knitting and coding. If you like coding, try picking up a different craft. Because you _are_ a craftsman.
+I live in Nashville with my wife, 3 teenage boys and 2 pugs. I'm a huge fan of Overwatch and I main Wrecking Ball. I know a lot of people don't like Wrecking Ball and they tell me all the time when we lose. I'm also an amateur craftsman, having built several pieces of modest furniture and doing remodel projects when my wife has new ideas for the house. There is a lot in common with woodworking and coding. Or knitting and coding. If you like coding, try picking up a different craft. Because you _are_ a craftsman.
 
 If you'd like to connect, you can [find me on Twitter](https://twitter.com/burkeholland). Although I treat Twitter kind of like Walmart - I only go in if I absolutely have to, so a better place to catch me is to [email me directly](mailto:burkeholland@gmail.com). I'd love to hear from you!
 

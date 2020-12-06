@@ -79,7 +79,7 @@ code .
 
 This is the output of your program. The "app.ts.bundleinfo" file contains your program's build info. It has paths to TypeScript definition files.
 
-If you scroll all the way down to the bottom, you'll see an embeded ".tsconfig"
+If you scroll all the way down to the bottom, you'll see an embedded ".tsconfig"
 
 The "app.ts.js" file contains the JavaScript output of your code - minified and with sourcemaps.
 
@@ -141,7 +141,7 @@ error: Cannot resolve module "file:///C:/dev/burkeholland/deno-first-look-window
 
 ## Executing remote scripts
 
-Deno can also execute scripts that are remote. That means that you literally call them with a URL. This is why the Deno docs have you call their sample "Hello World" program. This feels awfully unintuitive for a JavaScript developer. We explicity do **not** execute scripts from other sources because we don't know what they are going to do. But since Deno is "secure by default" as we discussed earlier, the model changes and Deno actually expects you to include code from remote locations.
+Deno can also execute scripts that are remote. That means that you literally call them with a URL. This is why the Deno docs have you call their sample "Hello World" program. This feels awfully unintuitive for a JavaScript developer. We explicitly do **not** execute scripts from other sources because we don't know what they are going to do. But since Deno is "secure by default" as we discussed earlier, the model changes and Deno actually expects you to include code from remote locations.
 
 Instead of running our local "app.ts" file, execute the remote "Hello World" example that Deno provides...
 
@@ -153,7 +153,7 @@ Check https://deno.land/std@0.76.0/examples/welcome.ts
 Welcome to Deno 🦕
 ```
 
-Notice that first Deno downloads the file, then it sends it through the compiler/transpiler, then executes it. Normally, we would consider this a highly dangerous thing to do, because we don't know what this file is or what it might attempt! But because Deno will not allow any program to access your files system, the net or do virually anything else without your permission, this is ok.
+Notice that first Deno downloads the file, then it sends it through the compiler/transpiler, then executes it. Normally, we would consider this a highly dangerous thing to do, because we don't know what this file is or what it might attempt! But because Deno will not allow any program to access your files system, the net or do virtually anything else without your permission, this is ok.
 
 But where is this file downloaded to? For that, we need to go back to the cache.
 

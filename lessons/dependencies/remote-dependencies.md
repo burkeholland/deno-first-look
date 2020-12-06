@@ -72,7 +72,7 @@ The `app.ts` file now looks like this...
     //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjo...
     ```
 
-But we know that Deno doesn't download that file everytime we run the program. We know that the first time we try and use it, Deno downloads it to the "deps" cache.
+But we know that Deno doesn't download that file every time we run the program. We know that the first time we try and use it, Deno downloads it to the "deps" cache.
 
 Linux
 
@@ -92,7 +92,7 @@ C:\Users\burkeholland\AppData\Local\deno\deps\https\deno.land
 C:\Users\burkeholland\AppData\Local\deno\deps\https\deno.land
 ```
 
-The "deps" cache now contains a bunch more files. These are the depedencies that were downloaded to your machine. This is the equivilant of an "npm install". Deno uses the metadata files to find the dependencies you need right on your own machine. It won't try and download these again unless you change the version or force an update.
+The "deps" cache now contains a bunch more files. These are the dependencies that were downloaded to your machine. This is the equivalent of an "npm install". Deno uses the metadata files to find the dependencies you need right on your own machine. It won't try and download these again unless you change the version or force an update.
 
 But how do we know what dependencies were installed? This is where the info command comes in again.
 

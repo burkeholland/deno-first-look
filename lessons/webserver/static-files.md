@@ -1,6 +1,6 @@
 ---
 path: "/webserver/static-files"
-title: "Servering up static files"
+title: "Serving up static files"
 order: "6C"
 section: "Building a Webserver"
 description: "Burke looks at how to build a simple web server with Deno"
