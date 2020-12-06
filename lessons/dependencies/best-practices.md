@@ -2,7 +2,7 @@
 path: "/dependencies/best-practices.md"
 title: "Best Practices"
 order: "4D"
-section: "Understanding Dependencies"
+section: "4 - Understanding Dependencies"
 description: "Burke dives into how Deno handles dependencies."
 ---
 
