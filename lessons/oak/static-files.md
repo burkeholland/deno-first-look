@@ -2,11 +2,11 @@
 path: "/oak/simple-oak"
 title: "Servering Static Files"
 order: "7E"
-section: "Oak web framework"
+section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-> Make sure you are on the **oak-static-files** branch before you start this section. Make sure you are working in the **exercises** folder. If you get stuck, check the **solution** folder.
+> Make sure you are on the "7-servering-static-files" branch to follow along with this section.
 
 Serving up static files is arguably the most basic feature of a web server. For Oak, it's relatively easy to serve up static files without much cermony.
 

@@ -2,7 +2,7 @@
 path: "/oak/deploying"
 title: "Deploying the Deno image"
 order: "8C"
-section: "Deploying"
+section: "8 - Deploying"
 description: "Burke looks at how to deploy an application built with Deno"
 ---
 
@@ -12,8 +12,6 @@ To complete this section, you'll need the following things...
 
 - [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?WT.mc_id=devcloud-0000-buhollan)
 - [Free Azure Account](https://azure.microsoft.com/en-us/free/)
-
-> Make sure you are on the "deploy-container" branch before continuing.
 
 Now that we've pushed the image to Dockerhub, we can pull it in from a cloud hosting provider. Nearly all providers support containers. For the purposes of this section, we'll be using Azure.
 
