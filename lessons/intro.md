@@ -2,7 +2,7 @@
 path: "/intro"
 title: "Introduction"
 order: "1A"
-section: "Welcome"
+section: "1 - Welcome"
 description: "Burke covers the agenda for the Deno First Look workshop, talks about himself a little bit more than you would probably like, explains how to submit issues with this course and then pontificates on whether or not Deno is something that has a future and if we should be investing valuable time into learning it."
 ---
 

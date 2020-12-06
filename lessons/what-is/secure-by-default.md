@@ -3,8 +3,10 @@ path: "/what-is/secure-by-default"
 title: "Secure By Default"
 order: "2B"
 description: "Deno runtime is secure by default. This is in stark contrast to how Node works today, and it's important to understand why so that Deno's default locked down state doesn't feel so oppressive."
-section: "What is Deno"
+section: "2 - What is Deno"
 ---
+
+> Switch to the '2-secure-by-default' branch in the exercises to run the code in this section
 
 Deno is secure by default. When I hear things like this, they often come off to me as esoteric and frankly paranoid reasons to write an entirely new runtime. The truth is, though, that Node.js is not a secure runtime environment. When you run a Node program on your local machine, it has all the permissions that you do. If you have the write to access a file, so does that program. And most of us as developers are have root or admin access on our own machines. Even if we don't, it would be fairly easy for an npm module with bad intentions to do some nasty damage to your machine, or worse, your production environment.
 

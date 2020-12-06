@@ -3,7 +3,7 @@ path: "/what-is/why-oh-why"
 title: "Why"
 order: "2A"
 description: "Why oh why do we need another JavaScript runtime?"
-section: "What is Deno"
+section: "2 - What is Deno"
 ---
 
 Deno is a command-line runtime for JavaScript. This means that it allows JavaScript to run outside of the browser. This is often referred to as "JavaScript on the server". This allows JavaScript to do I/O type things like reading and writing to files on disk, or handling incoming requests and working with streams of data. Basically, the runtime frees JavaScript from the browser and promotes it to a first-class language like C# or Java.

@@ -3,8 +3,10 @@ path: "/what-is/typescript-first"
 title: "TypeScript First"
 order: "2D"
 description: "Burke talks about why TypeScript plays an enormous role in how Deno thinks about how applications should be built."
-section: "What is Deno"
+section: "2 - What is Deno"
 ---
+
+> Switch to the 2-typescript-first branch to follow along with this section.
 
 Deno supports TypeScript as a first-class citizen. In fact, if you look at the Deno project, you'll see that it's standard library is written in TypeScript.
 
@@ -28,9 +30,7 @@ Strongly typed languages OO languages, by contrast, have a genuinely accepted se
 
 VS Code provides some legit tooling for JavaScript. It's quite good and provides some things that VS Code simply cannot do with JavaScript.
 
-Make a new folder and initialize a new project with "npm init". Add an empty file called "index.ts".
-
-Install the Cosmos DB package from npm. We won't be doing anything with it, but it's a great example of what benefits you can get when you adopt TypeScript as your language...
+In the "exercise" project, install the Cosmos DB package from npm. We won't be doing anything with it, but it's a great example of what benefits you can get when you adopt TypeScript as your language...
 
 ```bash
 npm i @azure/cosmos
@@ -70,9 +70,21 @@ console.log(message);
 
 > Note that Node WILL execute any file regardless of the extension. If the file contains valid JavaScript, it will work. You can try this out by putting some JavaScript in a file called index.smurf and then running it with node index.smurf
 
-In order to get TypeScript to work in Node, you have to convert it to JavaScript first. This is not hard to do in VS Code, but it creates a .js file of the same name. So now you have two files.
+In order to get TypeScript to work in Node, you have to convert it to JavaScript first. This is not hard to do in VS Code. All we need to do is initialize this project with a "tsconfig" file.
 
-This leads to a fairly cluttered project directory, especially if you are also generating source maps. Then you have 3 files.
+From your terminal, run the following in the "exercise" folder to initialize the directory as a TypeScript project...
+
+```bash
+tsc --init
+```
+
+This creates a "tsconfig" file with a bunch of options. Like every option in the book. Most are commented out. It's not important here what these options are. We're just trying to see how TypeScript currently plays out in the real world so we can make a comparison with how it works in Deno.
+
+Now that "index.ts" file needs to be converted to JavaScript so we can run it with Node. To do that, Press <kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> in VS Code.
+
+Notice that VS Code automatically detects that this is a TypeScript project and gives you the option to do a build, or a watch. Go ahead and select Build.
+
+The TypeScript file is "transpiled" to a .js file of the same name. And this file will run in Node. But now you have a problem. Instead of having one file, now you have two. Which, no big deal right? On a small scale no, but as the project grows, you'll have a fairly cluttered project directory, especially if you are also generating source maps. Because then you have 3 files for every one code file.
 
 We often mitigate this in VS Code with the setting "files.exclude" and then using globs to hide the ".js" and ".js.map" files...
 
@@ -84,6 +96,16 @@ We often mitigate this in VS Code with the setting "files.exclude" and then usin
 
 This has the side-effect of hiding the actual code files though. And furthermore, you need a watch process to make sure the underlying JavaScript is up to date. If you get out of date, you can spend a lot of time trying to figure out why something isn't working and it's because your watch process stopped running or some other error.
 
-Furthermore, when you deploy this app, the TypeScript needs to be built into JavaScript and then you don't need the TypeScript anymore and don't really want it on your production server. So what we often do is specify an output directy for the JavaScript and now we've got our project split into source and build directories. Now, that's not a bad thing. That might actually be the way things _should_ be, but it's a drag to set it up and easy to mess it up.
+When you deploy this app, the TypeScript needs to be built into JavaScript and then you don't need the TypeScript anymore and don't really want it on your production server. So what we often do is specify an output directy for the JavaScript and now we've got our project split into source and build directories.
 
-When TypeScript is a first-class citizen, none of this hackiness that comes from transpilation happens. Your TypeScript files ARE your code files. In Deno, TypeScript is a first-class citizen.
+In the .tsconfig file, change the "outDir" to "dist".
+
+```json
+"outDir": "dist"
+```
+
+This works, except that anything that your project needs that isn't a TypeScript file ALSO needs to be copied into this dist directory. Like - say - an Express app. You'll need the templates and "public" folder from that to make sure you templates and static assets move with the project. At this point, you're probably into a build system like Gulp to try and automate this all. It can get tedious in a hurry.
+
+Now, I'm not suggesting that any of this is necessarily a bad thing. That might actually be the way things _should_ be, but, that doesn't stop it from being a drag to set up and easy to mess up.
+
+In Deno, TypeScript is a first-class citizen. And as you'll see, when TypeScript is first-class none of this hackiness that comes from transpilation happens. Your TypeScript files ARE your code files.

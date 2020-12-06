@@ -3,12 +3,14 @@ path: "/what-is/dependency-hell"
 title: "Dependency Hell"
 order: "2C"
 description: "Burke looks at what the current state of dependencies in Node.js is, and why Deno has a fundamentally different approach."
-section: "What is Deno"
+section: "2 - What is Deno"
 ---
 
-Dependencies have been a topic of ongoing controversy as long as computers have existed. Across all platforms, all languages, all runtimes. Everywhere. People have different opinions about how dependencies should be resolved, packaged, referenced and the like. And make no mistake, dependencies are hard.
+> Switch to the 2-dependency-hell branch in the exercises to follow along with this section.
 
-The reason for this is that dependencies often take dependencies of their own and those dependencies have dependencies. And that just explodes into a million dependencies to do something very simple.
+Dependencies have been a topic of ongoing controversy as long as computers have existed. Across all platforms, all languages, all runtimes. Everywhere. People have different opinions about how dependencies should be resolved, packaged, referenced and the like. Make no mistake, dependencies are hard.
+
+The reason for this is that dependencies often take dependencies of their own and those dependencies have dependencies. And that just explodes into a million dependencies to do something very simple. And all of those dependencies could have bugs or security flaws. All of which you assume when you bring them into your project. The dependency manager's job, then is to keep track up what version of what package works with what other package so that if one of those dependencies down the chain gets updated, the whole project doesn't break. You may be familiar with the package lock file? That's exactly what that file is doing.
 
 So what's wrong with the way that Node.js handles dependencies? Well, there are a few things that...maybe could be handled differently.
 
@@ -26,7 +28,7 @@ But for that convenience we get a single point of failure and it is now owned by
 
 Believe it or not, one of the things that Brian regrets is the `package.json` file. I find this to be a nitpick, but he feels like it's a lot of boilerplate and for what? He's got a point there.
 
-Create a new folder and in that folder, execute the following command...
+In the "exercise" folder, execute the following command...
 
 ```javascript
 npm init
