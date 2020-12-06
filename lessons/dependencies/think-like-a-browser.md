@@ -2,7 +2,7 @@
 path: "/dependencies/think-like-a-browser.md"
 title: "Thinking like a browser"
 order: "4A"
-section: "Understanding Dependencies"
+section: "4 - Understanding Dependencies"
 description: "Burke dives into how Deno handles dependencies."
 ---
 

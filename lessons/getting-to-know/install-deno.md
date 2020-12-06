@@ -2,7 +2,7 @@
 path: "/getting-to-know/install"
 title: "Installing Deno"
 order: "3A"
-section: "Getting to know Deno"
+section: "3 - Getting to know Deno"
 description: "Burke covers how to install Deno, and takes a look at the Deno CLI, REPL and what options you need to be aware of."
 ---
 

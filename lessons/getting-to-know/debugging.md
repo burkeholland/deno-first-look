@@ -2,11 +2,11 @@
 path: "/getting-to-know/debugging"
 title: "Debugging"
 order: "3F"
-section: "Getting to know Deno"
+section: "3 - Getting to know Deno"
 description: "Burke looks at how to debug Deno apps"
 ---
 
-> Before you start this section, make sure you are on the "debugging" branch in the "exercise" folder. If you get stuck, check the "solution" folder for the completed code.
+> Make sure you are on the "3-debugging" branch in the "exercise" folder to follow along with this section.
 
 Deno apps can be debugged either from the browser, or with VS Code. Much like Node, Deno has `--inspect` and `--inspect-brk` flags. The `--inspect` flag starts the program and listens for the debugger. The `--inspect-brk` does the same thing except that it automatically breaks on the first line of the program.
 
@@ -74,7 +74,7 @@ VS Code creates a launch configuration and adds a file called `launch.json` and 
 - Open the `app.ts` file
 - Click in the gutter next to line 1 to add a breakpoint. A red circle should appear next to the line.
 
-  ![Breakpoint in VS Code](../images/breakpoint.jpg)
+![Breakpoint in VS Code](../images/breakpoint.jpg)
 
 - Press <kbd>F5</kbd> to start the application.
 - The application breaks on the line where you breakpoint is.
@@ -100,15 +100,15 @@ Notice that you can't see any output. Why is that? Where is the "Hello World" be
 
 By default, VS Code runs terminal apps on in internal console that you cannot see. You can alter this by specifying the "console" property in the `launch.config` file. Set it to "integrated" to see the output in the VS Code terminal.
 
-    ```json
-    "args": [
-        "World"
-    ],
-    "console": "integratedTerminal",
-    ```
+```json
+"args": [
+    "World"
+],
+"console": "integratedTerminal",
+```
 
 - Press <kbd>F5</kbd> to run the application again.
 - Press the "step over" button in the debug bar.
 - "Hello World" is written to the Integrated Terminal.
 
-  ![Integrated terminal](../images/integrated-terminal.jpg)
+![Integrated terminal](../images/integrated-terminal.jpg)
