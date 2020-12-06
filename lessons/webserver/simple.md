@@ -2,9 +2,11 @@
 path: "/webserver/simple"
 title: "Building a simple webserver"
 order: "6A"
-section: "Building a Webserver"
+section: "6 - Building a Webserver"
 description: "Burke looks at how to build a simple web server with Deno"
 ---
+
+> Make sure you are on the "6-building-a-simple-webserver" branch to follow along with this section.
 
 One of the most common use-cases for a JavaScript runtime is a web server. Web servers are a common way of exposing APIs and building fullstack data-driven applications.
 
@@ -65,9 +67,9 @@ error: Uncaught PermissionDenied: network access to "0.0.0.0:3000", run again wi
 
 Run the program again with the `allow-net` flag. Be sure to restrict the access to only port 3000.
 
-    ```bash
-    deno run --allow-net=0.0.0.0:3000 app.ts
-    ```
+```bash
+deno run --allow-net=0.0.0.0:3000 app.ts
+```
 
 The server should now be running on port 3000. When you visit it in the browser, you should see "Hello World".
 
@@ -84,3 +86,5 @@ for await (const req of server) {
     });
 }
 ```
+
+OK - that's about as simple a web server as we can get. Let's take a look at some common web server type scenarios.

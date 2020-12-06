@@ -2,9 +2,11 @@
 path: "/webserver/reading-parameters"
 title: "Reading the query string"
 order: "6B"
-section: "Building a Webserver"
+section: "6 - Building a Webserver"
 description: "Burke looks at how to build a simple web server with Deno"
 ---
+
+> Make sure you are on the "6-reading-the-query-string" branch to follow along with this section.
 
 ## Reading query parameters
 
@@ -81,7 +83,7 @@ In any event, we're going to get a chance to see how we can use Node modules in 
 
 ### Using Node Dependencies
 
-We can use _some_ Node modules in Deno. If they have strong Node dependencies, they probably won't work. But this one says it's isomorphic. That means that it works in Node and in the browser. If it works in the browser, there is a high probability it will work in Deno.
+We can use _some_ Node modules in Deno. If they have strong Node runtime dependencies, they probably won't work. But this one says it's isomorphic. That means that it works in Node and in the browser. If it works in the browser, there is a high probability it will work in Deno.
 
 But how do we import a Node module into Deno? What is the URL for a Node module.
 
@@ -121,7 +123,6 @@ And now we can use it just like the "route-parser" docs show. Let's return the n
 
 ```typescript
 import { serve } from "https://deno.land/std/http/server.ts";
-import { serveFile } from "https://deno.land/std/http/file_server.ts";
 
 import routeParser from "https://dev.jspm.io/route-parser@0.0.5";
 import RouteParser from "https://unpkg.com/@types/route-parser@0.1.3/index.d.ts";
@@ -142,8 +143,7 @@ for await (const req of server) {
   if (match.name) {
     req.respond({ body: `Hello, ${match.name}` });
   } else {
-    const html = await serveFile(req, "404.html");
-    req.respond(html);
+    req.response({ body: "Please pass a name route." });
   }
 }
 ```
