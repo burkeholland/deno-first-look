@@ -6,7 +6,7 @@ description: "Burke talks about why TypeScript plays an enormous role in how Den
 section: "2 - What is Deno"
 ---
 
-> Switch to the 2-typescript-first branch to follow along with this section.
+> Switch to the "2-typescript-first" branch to follow along with this section.
 
 Deno supports TypeScript as a first-class citizen. In fact, if you look at the Deno project, you'll see that it's standard library is written in TypeScript.
 
