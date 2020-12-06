@@ -2,25 +2,27 @@
 path: "/webserver/static-files"
 title: "Servering up static files"
 order: "6C"
-section: "Building a Webserver"
+section: "6 - Building a Webserver"
 description: "Burke looks at how to build a simple web server with Deno"
 ---
+
+> Make sure you are on the "6-serving-up-static-files" branch to follow along with this exercise.
 
 Normally, we serve up HTML files with a web server. These are also called "static files", because the server doesn't change them, it just serves them. They are static.
 
 One way to serve a static file would be to read the file with the Deno object. There is an "index.html" file already in the project. Let's use the `Deno` object to read that file off of disk and serve it up.
 
-- Modify the `for` loop to use the `Deno.readFile` method to read the "index.html" file.
+Modify the `for` loop to use the `Deno.readFile` method to read the "index.html" file.
 
-  ```typescript
-  for await (const req of server) {
-    const html = await Deno.readFile("index.html");
+```typescript
+for await (const req of server) {
+  const html = await Deno.readFile("index.html");
 
-    req.respond({
-      body: html,
-    });
-  }
-  ```
+  req.respond({
+    body: html,
+  });
+}
+```
 
 Run the app. Since we're reading the disk now, we'll have to pass in the `--allow-read` flag as well.
 
