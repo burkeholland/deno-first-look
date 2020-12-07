@@ -2,7 +2,7 @@
 path: "/oak/introducing-oak"
 title: "Introducing Oak"
 order: "7A"
-section: "Oak web framework"
+section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
@@ -20,21 +20,21 @@ In this next section, we're going to build an opinionated project structure for 
 
 ## Generating an Express app
 
-- Generate a new Express App with Handlebars template support
+Generate a new Express App with Handlebars template support
 
-  ```bash
-  npx express-generator --hbs my-express-app && cd my-express-app && npm i
-  ```
+```bash
+npx express-generator --hbs my-express-app && cd my-express-app && npm i
+```
 
-- Open the application in your editor
+Open the application in your editor
 
-- Run it from your terminal with `npm start`.
+Run it from your terminal with `npm start`.
 
-  ![Default Express app in browser](../images/default-express-app.jpg)
+![Default Express app in browser](../images/default-express-app.jpg)
 
-- Examine the project in your editor
+Examine the project in your editor
 
-  ![Express app open in VS Code](../images/express-app.jpg)
+![Express app open in VS Code](../images/express-app.jpg)
 
 - Examine the `app.js` file. Note that Express puts all of it's application setup logic in the `app.js` file.
 - Examine the "views" folder. Note that there is a layout, index and error template.

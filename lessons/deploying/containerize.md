@@ -2,7 +2,7 @@
 path: "/oak/deploying"
 title: "Containerizing a Deno Application"
 order: "8B"
-section: "Deploying"
+section: "8 - Deploying"
 description: "Burke looks at how to deploy an application built with Deno"
 ---
 
@@ -12,8 +12,6 @@ In order to complete this section, you'll need the following installed...
 
 - [Docker Community Edition](https://docs.docker.com/get-docker/)
 - [Docker extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker&WT.mc_id=devcloud-0000-buhollan)
-
-> Before you start this, make sure you are on the "deployment-unbundled" branch in the "exercise" folder.
 
 A Deno application can be deployed to production in 2 different ways - bundled and unbundled. While there is a long-term goal (and open issue) for compiling to an ".exe" at some point in the future, we are not there yet. It should be noted that Ryan stated this goal in his "10 things I regret about Node" talk as well.
 
