@@ -34,7 +34,7 @@ In the "exercise" folder, execute the following command...
 npm init
 ```
 
-You get asked about a dozen questions and it's not clear why you need any of this information. What's an entrypoint? Do you need one? Why do you need a version? Keywords? These things might be important if you are creating an npm package, but most of us are not doing that. The `package.json` is usually full of information that you don't really need. It's extraneous.
+You get asked about a dozen questions and it's not clear why you need any of this information. What's an entry point? Do you need one? Why do you need a version? Keywords? These things might be important if you are creating an npm package, but most of us are not doing that. The `package.json` is usually full of information that you don't really need. It's extraneous.
 
 ```json
 {

@@ -71,4 +71,4 @@ deno run --allow-read=../ app.ts
 
 The program should run successfully.
 
-Passing flags like this is how you explicitly give code elevated access. But it is not the only way. The other way to get elevated access in Deno is to request it from the code itself. This is more akin to the way that apps on your phone will ask for access to your location, photos, notifications, ect.
+Passing flags like this is how you explicitly give code elevated access. But it is not the only way. The other way to get elevated access in Deno is to request it from the code itself. This is more akin to the way that apps on your phone will ask for access to your location, photos, notifications, etc.

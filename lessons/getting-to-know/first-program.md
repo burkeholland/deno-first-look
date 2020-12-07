@@ -83,7 +83,7 @@ If you scroll all the way down to the bottom, you'll see an embedded ".tsconfig"
 
 The "app.ts.js" file contains the JavaScript output of your code - minified and with sourcemaps.
 
-The `app.ts.meta` contains information concerning the version of your file. Deno is using these files to determine what dependencies your program has, what version it is, ect. We'll look at this again later on and you'll understand more about _why_ Deno is doing all of this.
+The `app.ts.meta` contains information concerning the version of your file. Deno is using these files to determine what dependencies your program has, what version it is, etc. We'll look at this again later on and you'll understand more about _why_ Deno is doing all of this.
 
 In summary, Deno is the compiler and it checks code for errors the way any strongly typed language compiler would.
 

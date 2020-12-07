@@ -66,7 +66,7 @@ async function main() {
 main();
 ```
 
-This code recursively reads your home directory for anything that looks like an .env file, and then logs that out. That's all your secrets, connection strings, ect. If I can get you to run this, then I can get your database connection strings, your OAuth keys - whatever you might be keeping in those local .env files.
+This code recursively reads your home directory for anything that looks like an .env file, and then logs that out. That's all your secrets, connection strings, etc. If I can get you to run this, then I can get your database connection strings, your OAuth keys - whatever you might be keeping in those local .env files.
 
 But how do I get you to run this? Aren't you smart enough NOT to run some package you don't trust or code that just looks nefarious? After all, YOU have to run this. So how do I get you to run it?
 

@@ -6,7 +6,7 @@ section: "3 - Getting to know Deno"
 description: "Burke covers how to install Deno, and takes a look at the Deno CLI, REPL and what options you need to be aware of."
 ---
 
-Deno can be installed via cURL, Homebrew, PowerShell, Chocolatey - you name it. [Check the Deno docs](https://deno.land/#installation) for official instructions. For the sake of brevity, we'll use the cURL/Powershell commands for this class.
+Deno can be installed via cURL, Homebrew, PowerShell, Chocolatey - you name it. [Check the Deno docs](https://deno.land/#installation) for official instructions. For the sake of brevity, we'll use the cURL/PowerShell commands for this class.
 
 #### cURL
 
