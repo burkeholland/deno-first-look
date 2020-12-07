@@ -1,5 +1,5 @@
 ---
-path: "/oak/deploying"
+path: "/deploying/containerize-deno-app"
 title: "Containerizing a Deno Application"
 order: "8B"
 section: "8 - Deploying"
@@ -45,7 +45,7 @@ We need a base image to start from - one that has Deno in it. While Deno [doesn'
 FROM hayd/alpine-deno:1.5.4
 ```
 
-This image contains not only Deno, but all of the deno environment configuration that we would normally need to do to get autocompletions and the like. It also contains a default user called "deno" so that your application doesn't run as root with too many privilages.
+This image contains not only Deno, but all of the deno environment configuration that we would normally need to do to get autocompletions and the like. It also contains a default user called "deno" so that your application doesn't run as root with too many privileges.
 
 Now that we've got that image, we need to define our working directory - or rather - the directory where our application is going to go inside the container. You can call it anything you like. I usually just call it, "app".
 

@@ -1,5 +1,5 @@
 ---
-path: "/oak/deploying"
+path: "/deploying/deploy-deno-image"
 title: "Deploying the Deno image"
 order: "8C"
 section: "8 - Deploying"

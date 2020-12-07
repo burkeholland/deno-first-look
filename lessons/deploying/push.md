@@ -1,5 +1,5 @@
 ---
-path: "/oak/deploying"
+path: "/deploying/push-to-image-registry"
 title: "Pushing the Deno image to a registry"
 order: "8B"
 section: "8 - Deploying"
