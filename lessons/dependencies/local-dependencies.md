@@ -1,5 +1,5 @@
 ---
-path: "/dependencies/local-dependencies.md"
+path: "/dependencies/local-dependencies"
 title: "Local dependencies"
 order: "4B"
 section: "4 - Understanding Dependencies"

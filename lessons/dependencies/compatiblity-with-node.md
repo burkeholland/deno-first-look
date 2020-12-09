@@ -1,5 +1,5 @@
 ---
-path: "/dependencies/compatibility-with-node.md"
+path: "/dependencies/compatibility-with-node"
 title: "Compatibility With Node"
 order: "4E"
 section: "4 - Understanding Dependencies"

@@ -1,5 +1,5 @@
 ---
-path: "/dependencies/best-practices.md"
+path: "/dependencies/best-practices"
 title: "Best Practices"
 order: "4D"
 section: "4 - Understanding Dependencies"

@@ -1,5 +1,5 @@
 ---
-path: "/dependencies/think-like-a-browser.md"
+path: "/dependencies/think-like-a-browser"
 title: "Thinking like a browser"
 order: "4A"
 section: "4 - Understanding Dependencies"

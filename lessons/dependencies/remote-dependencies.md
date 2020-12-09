@@ -1,5 +1,5 @@
 ---
-path: "/dependencies/remote-dependencies.md"
+path: "/dependencies/remote-dependencies"
 title: "Remote dependencies"
 order: "4C"
 section: "4 - Understanding Dependencies"
