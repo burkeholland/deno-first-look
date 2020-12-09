@@ -1,5 +1,5 @@
 ---
-path: "/intro"
+path: "/exercises"
 title: "How to use the exercises"
 order: "1B"
 section: "1 - Welcome"
