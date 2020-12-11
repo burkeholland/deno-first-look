@@ -16,7 +16,7 @@ In VS Code, type `Deno` and then hit the `.`. The intellisense should come up. U
 
 ![The deno object](../images/deno-object.jpg)
 
-Notice that most of these methods are for interacting with the system. This includes thins like `chown` for changing file permissions, and the APIs for creating file, reading files and writing to files.
+Notice that most of these methods are for interacting with the system. This includes things like `chown` for changing file permissions, and the APIs for creating file, reading files and writing to files.
 
 Deno also has a standard library that you can import as a dependency. This can be confusing. It can be hard to know what functionality is on the Deno object, and what you might need the Standard Library for.
 

@@ -69,7 +69,7 @@ Inside that folder, you will find several files...
 
 - app.ts.bundleinfo
 - app.ts.js
-- app.ts.metadata
+- app.ts.meta
 
 Open this folder in VS Code by executing the following command in the terminal from the same folder where these files are located.
 

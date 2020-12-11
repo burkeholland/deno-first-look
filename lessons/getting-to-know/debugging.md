@@ -16,14 +16,14 @@ When a process is in debug mode, you can attach to it with browser dev tools to 
 
 This should work in any Chromium based browser - including Chrome itself and Microsoft Edge.
 
-First, make sure the `app.ts` file contains the following code as we left it in the last module...
+First, make sure the `app.ts` file contains the following code as we left it in the last module.
 
 ```typescript
 const message: String = Deno.args[0];
 console.log(`Hello ${message}`.toUpperCase());
 ```
 
-Run the program as you normally would, but this time, pass in the `--inspect` flag
+Run the program as you normally would, but this time, pass in the `--inspect` flag.
 
 ```bash
 deno run --inspect app.ts World
@@ -31,7 +31,7 @@ deno run --inspect app.ts World
 
 Passing the `--inspect` flag opens the debugger port. However, the program runs to completion and you never have a chance to debug it. This is because you haven't set any breakpoints and your code has no errors. The solution to this is to use the `--inspect-brk` flag instead.
 
-Run the program again, this time passing in the `--inspect-brk` flag...
+Run the program again, this time passing in the `--inspect-brk` flag.
 
 ```bash
 deno run --inspect-brk app.ts World
@@ -49,7 +49,7 @@ The browser should automatically see your running program and list it as a "targ
 
 ![The chrome inspect page](../images/edge-inspect.jpg)
 
-This will open the browser dev tools and you will see the your program is broken on the first line...
+This will open the browser dev tools and you will see the your program is broken on the first line.
 
 ![The chrome dev tools](../images/chrome-debug.jpg)
 
@@ -59,7 +59,7 @@ Step over to the next line and hover over the `Deno.args` object. You can see th
 
 Click the continue button to finish execution and then close the Dev Tools.
 
-> Noe that at the time of this writing, this does not work with WSL2 as Chrome/Edge looks for Deno source code in //home/, which is not a valid path on Windows.
+> Note that at the time of this writing, this does not work with WSL2 as Chrome/Edge looks for Deno source code in //home/, which is not a valid path on Windows.
 
 ## Debugging with VS Code
 
@@ -71,7 +71,7 @@ The Deno extension for VS Code includes a debugger. It also knows how to automat
 
 VS Code creates a launch configuration and adds a file called `launch.json` and a folder called ".vscode". The `launch.json` file will open by default. For now, you don't need to change anything.
 
-- Open the `app.ts` file
+- Open the `app.ts` file.
 - Click in the gutter next to line 1 to add a breakpoint. A red circle should appear next to the line.
 
 ![Breakpoint in VS Code](../images/breakpoint.jpg)
