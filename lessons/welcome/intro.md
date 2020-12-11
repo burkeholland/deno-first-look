@@ -26,7 +26,7 @@ The last time I did a course, I got a lot of PR's on mistakes made throughout. M
 
 ## Who Am I?
 
-![Yours truly at the Badlands in South Dakota](images/me.jpg)
+![Yours truly at the Badlands in South Dakota](../images/me.jpg)
 
 My name is Burke Holland, and I am a Content Engineer at Microsoft, where I do advocacy around VS Code, GitHub, Azure and all things JavaScript. I have a cursor on my face.
 
@@ -34,7 +34,7 @@ I work with a team of great people and together we try and make Microsoft tools,
 
 I love teaching because it's simply the best way to learn anything. It also lets me connect with people and through this, I have learned that we are all far more alike than we are different. Mainly, we are all learning, and nobody has it all figured out. If you feel like you are the only one who doesn't understand things, let me assure you, you are not. There are at least 2 of us, and I am one. I love this diagram. I think it says it all.
 
-![](images/what-i-know.png)
+![](../images/what-i-know.png)
 
 _Image Credit:_ [Alicia Liu](https://medium.com/counter-intuition/overcoming-impostor-syndrome-bdae04e46ec5)
 
@@ -44,7 +44,7 @@ If you'd like to connect, you can [find me on Twitter](https://twitter.com/burke
 
 ## Why Was This Course Created?
 
-![Frontend Masters Logo](images/FrontendMastersLogo.png)
+![Frontend Masters Logo](../images/FrontendMastersLogo.png)
 
 I think the key to staying sane in this industry is to always be open to learning new things. It's also good to learn to learn-and-forget. You'll pick up things that stay with you and pay dividends down the road. Deno may be a ripple in a vast and endless ocean of JavaScript projects, libraries and frameworks. Or it may become the ocean itself. We don't know and that can cause distress. Learning about something removes the fear and intimidation that causes us to avoid things. This is true for everything in life, not just technology. Try it out and you'll see what I mean. If something scares you, learn more about it and will lose its power.
 
