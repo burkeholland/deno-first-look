@@ -6,9 +6,9 @@ description: "Burke talks about why TypeScript plays an enormous role in how Den
 section: "2 - What is Deno"
 ---
 
-> Switch to the "2-typescript-first" branch to follow along with this section.
+> Switch to the ["2-typescript-first"](https://github.com/burkeholland/deno-exercises/tree/2-typescript-first) branch to follow along with this section.
 
-Deno supports TypeScript as a first-class citizen. In fact, if you look at the Deno project, you'll see that it's standard library is written in TypeScript.
+Deno supports TypeScript as a first-class citizen. In fact, if you look at the [Deno project](https://github.com/denoland/deno), you'll see that it's standard library is written in TypeScript.
 
 ![](../images/stdlib-typescript.jpg)
 
@@ -24,7 +24,7 @@ One of the beautiful things about JavaScript is that there is no _right_ way to 
 
 This is also one of the drawbacks. It makes it harder for organizations to standardize on JavaScript because they have to invent their own patterns.
 
-Strongly typed languages OO languages, by contrast, have a genuinely accepted set of patterns as laid out by books such as those laid out in the book "Design Patterns" by the notorious Gang of Four. By the way, one of those authors, Erich Gamma is the man behind VS Code. So these folks know what they are doing.
+Strongly typed OO languages, by contrast, have a genuinely accepted set of patterns as laid out by books such as those laid out in the book "Design Patterns" by the notorious Gang of Four. By the way, one of those authors, Erich Gamma is the man behind VS Code. So these folks know what they are doing.
 
 ## Better Tooling
 
@@ -36,7 +36,7 @@ In the "exercise" project, install the Cosmos DB package from npm. We won't be d
 npm i @azure/cosmos
 ```
 
-Import the module and create a new instance of "CosmosClient"...
+Import the module and create a new instance of "CosmosClient".
 
 ```bash
 import cosmos from "@azure/cosmos";
@@ -98,7 +98,7 @@ This has the side-effect of hiding the actual code files though. And furthermore
 
 When you deploy this app, the TypeScript needs to be built into JavaScript and then you don't need the TypeScript anymore and don't really want it on your production server. So what we often do is specify an output directly for the JavaScript and now we've got our project split into source and build directories.
 
-In the .tsconfig file, change the "outDir" to "dist".
+In the tsconfig file, change the "outDir" to "dist".
 
 ```json
 "outDir": "dist"
@@ -106,6 +106,6 @@ In the .tsconfig file, change the "outDir" to "dist".
 
 This works, except that anything that your project needs that isn't a TypeScript file ALSO needs to be copied into this dist directory. Like - say - an Express app. You'll need the templates and "public" folder from that to make sure you templates and static assets move with the project. At this point, you're probably into a build system like Gulp to try and automate this all. It can get tedious in a hurry.
 
-Now, I'm not suggesting that any of this is necessarily a bad thing. That might actually be the way things _should_ be, but, that doesn't stop it from being a drag to set up and easy to mess up.
+Now, I'm not suggesting that any of this is necessarily a bad thing. That might be the way things _should_ be but, that doesn't stop it from being a drag to set up and easy to mess up.
 
 In Deno, TypeScript is a first-class citizen. And as you'll see, when TypeScript is first-class none of this hackiness that comes from transpilation happens. Your TypeScript files ARE your code files.
