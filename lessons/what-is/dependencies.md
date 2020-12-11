@@ -6,7 +6,7 @@ description: "Burke looks at what the current state of dependencies in Node.js i
 section: "2 - What is Deno"
 ---
 
-> Switch to the ["2-dependency-hell"](https://github.com/burkeholland/deno-exercises/tree/2-dependency-hell) branch in the exercises to follow along with this section.
+> Switch to the [2-dependency-hell](https://github.com/burkeholland/deno-exercises/tree/2-dependency-hell) branch in the exercises to follow along with this section.
 
 Dependencies have been a topic of ongoing controversy as long as computers have existed. Across all platforms, all languages, all runtimes. Everywhere. People have different opinions about how dependencies should be resolved, packaged, referenced and the like. Make no mistake, dependencies are hard.
 

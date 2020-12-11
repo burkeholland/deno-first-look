@@ -6,7 +6,7 @@ section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-> Make sure you are on the ["7-serving-static-files"](https://github.com/burkeholland/deno-exercises/tree/7-serving-static-files) branch to follow along with this section.
+> Make sure you are on the [7-serving-static-files](https://github.com/burkeholland/deno-exercises/tree/7-serving-static-files) branch to follow along with this section.
 
 Serving up static files is arguably the most basic feature of a web server. For Oak, it's relatively easy to serve up static files without much ceremony.
 

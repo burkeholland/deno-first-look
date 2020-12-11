@@ -6,7 +6,7 @@ section: "5 - Permissions"
 description: "Burke explores the unique permissions model of Deno."
 ---
 
-> Make sure you are on the ["5-permission-specficity"](https://github.com/burkeholland/deno-exercises/tree/5-permission-specficity) branch to follow along with this section.
+> Make sure you are on the [5-permission-specficity](https://github.com/burkeholland/deno-exercises/tree/5-permission-specficity) branch to follow along with this section.
 
 ## Permission Specificity
 

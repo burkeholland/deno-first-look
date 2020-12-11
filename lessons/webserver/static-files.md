@@ -6,7 +6,7 @@ section: "6 - Building a Webserver"
 description: "Burke looks at how to build a simple web server with Deno"
 ---
 
-> Make sure you are on the ["6-serving-up-static-files"](https://github.com/burkeholland/deno-exercises/tree/6-serving-up-static-files) branch to follow along with this exercise.
+> Make sure you are on the [6-serving-up-static-files](https://github.com/burkeholland/deno-exercises/tree/6-serving-up-static-files) branch to follow along with this exercise.
 
 Normally, we serve up HTML files with a web server. These are also called "static files", because the server doesn't change them, it just serves them. They are static.
 

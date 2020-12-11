@@ -6,7 +6,7 @@ section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-> Make sure you switch to the ["7-simple-oak-server"](https://github.com/burkeholland/deno-exercises/tree/7-simple-oak-server) branch to follow along with this section.
+> Make sure you switch to the [7-simple-oak-server](https://github.com/burkeholland/deno-exercises/tree/7-simple-oak-server) branch to follow along with this section.
 
 Oak is a [third-party library for Deno](https://oakserver.github.io/oak/). It's just like using an npm package with Node.
 

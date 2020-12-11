@@ -6,7 +6,7 @@ section: "5 - Permissions"
 description: "Burke explores the unique permissions model of Deno."
 ---
 
-> Make sure you are on the ["5-determining-permissions"](https://github.com/burkeholland/deno-exercises/tree/5-determining-permissions) branch to follow along with this section.
+> Make sure you are on the [5-determining-permissions](https://github.com/burkeholland/deno-exercises/tree/5-determining-permissions) branch to follow along with this section.
 
 The "permissions" API in Deno allows you to "query" for a specific permission to see if you have it or not. This gives you a chance to ask for it if it doesn't already exist. Although, if the permissions is already granted, the code requesting the permission again will not run, and the "state" will be "granted".
 
