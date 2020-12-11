@@ -6,7 +6,7 @@ section: "4 - Understanding Dependencies"
 description: "Burke dives into how Deno handles dependencies."
 ---
 
-> Make sure you are on the "4-remote-dependencies" branch to follow along with this section.
+> Make sure you are on the ["4-remote-dependencies"](https://github.com/burkeholland/deno-exercises/tree/4-remote-dependencies) branch to follow along with this section.
 
 "Remote" dependencies are how Deno handles what you would know today as "npm" packages. These are libraries that you might consume and use that someone else has written.
 

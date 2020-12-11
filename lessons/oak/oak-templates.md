@@ -6,7 +6,7 @@ section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-> Make sure you are on the "7-oak-templates" branch to follow along with this section.
+> Make sure you are on the ["7-oak-templates"](https://github.com/burkeholland/deno-exercises/tree/7-oak-templates) branch to follow along with this section.
 
 A key benefit of web servers is being able to dynamically compose templates. In order to do that with Oak, we need to add a templating engine. In this section, we'll add the templating engine and change the router to render the template instead of just text.
 

@@ -6,7 +6,7 @@ section: "3 - Getting to know Deno"
 description: "Burke looks at how to pass arguments and flags to the Deno CLI"
 ---
 
-> Make sure you are on the "3-the-deno-object" branch to follow along with this section.
+> Make sure you are on the ["3-the-deno-object"](https://github.com/burkeholland/deno-exercises/tree/3-the-deno-object) branch to follow along with this section.
 
 Just like a browser has a top-level "window" object, Deno has a top level "Deno" object. Much of the functionality that you would expect to find in certain Node modules is built in to this global object.
 

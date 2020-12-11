@@ -6,7 +6,7 @@ section: "5 - Permissions"
 description: "Burke explores the unique permissions model of Deno."
 ---
 
-> Make sure you are on the "5-granting-permissions" branch to follow along with this section.
+> Make sure you are on the ["5-granting-permissions"](https://github.com/burkeholland/deno-exercises/tree/5-granting-permissions) branch to follow along with this section.
 
 One of the core tenants of Deno is "secure by default". As we discussed in the section of the same name, this means that by default, Deno can't do very much without your permission. It can't read your file system, it can't make HTTP calls - it's completely sandboxed. 
 

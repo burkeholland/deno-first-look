@@ -6,7 +6,7 @@ section: "3 - Getting to know Deno"
 description: "Burke covers how to install Deno, and takes a look at the Deno CLI, REPL and what options you need to be aware of."
 ---
 
-> Switch to the "3-tooling" branch to follow along with this section
+> Switch to the ["3-tooling"](https://github.com/burkeholland/deno-exercises/tree/3-tooling) branch to follow along with this section
 
 Tooling is available for Deno in the form of the Deno VS Code extension. The primary value of the extension is that it provides intellisense for Deno and a debugger.
 

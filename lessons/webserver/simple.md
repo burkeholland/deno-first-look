@@ -6,7 +6,7 @@ section: "6 - Building a Webserver"
 description: "Burke looks at how to build a simple web server with Deno"
 ---
 
-> Make sure you are on the "6-building-a-simple-webserver" branch to follow along with this section.
+> Make sure you are on the ["6-building-a-simple-webserver"](https://github.com/burkeholland/deno-exercises/tree/6-building-a-simple-webserver) branch to follow along with this section.
 
 One of the most common use-cases for a JavaScript runtime is a web server. Web servers are a common way of exposing APIs and building full stack data-driven applications.
 

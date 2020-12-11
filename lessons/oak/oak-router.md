@@ -6,7 +6,7 @@ section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-> Make sure you switch to the "7-oak-router" branch to follow along with this section.
+> Make sure you switch to the ["7-oak-router"](https://github.com/burkeholland/deno-exercises/tree/7-oak-router) branch to follow along with this section.
 
 Oak contains prebuild Router middleware that will allow you to handle different routes, parameters and queries. It's basically doing a lot of string parsing and pattern matching that you would otherwise have to do yourself.
 

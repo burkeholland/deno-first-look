@@ -6,7 +6,7 @@ section: "4 - Understanding Dependencies"
 description: "Burke dives into how Deno handles dependencies."
 ---
 
-> Make sure you are on the "4-local-depedencies" branch to follow along with this section.
+> Make sure you are on the ["4-local-depedencies"](https://github.com/burkeholland/deno-exercises/tree/4-local-depedencies) branch to follow along with this section.
 
 First let's look at how Deno handles local dependencies. We'll do that by creating a local dependency and importing it into our main "app.ts" file.
 

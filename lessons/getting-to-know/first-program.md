@@ -6,7 +6,7 @@ section: "3 - Getting to know Deno"
 description: "Burke goes over how to write your first program with Deno and execute it with the Deno CLI."
 ---
 
-> Switch to the "3-your-first-program" branch to follow along with this section.
+> Switch to the ["3-your-first-program"](https://github.com/burkeholland/deno-exercises/tree/3-your-first-program) branch to follow along with this section.
 
 Deno programs can be written in TypeScript or JavaScript. Either will work.
 

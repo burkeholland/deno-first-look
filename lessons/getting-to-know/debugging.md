@@ -6,7 +6,7 @@ section: "3 - Getting to know Deno"
 description: "Burke looks at how to debug Deno apps"
 ---
 
-> Make sure you are on the "3-debugging" branch in the "exercise" folder to follow along with this section.
+> Make sure you are on the ["3-debugging"](https://github.com/burkeholland/deno-exercises/tree/3-debugging) branch in the "exercise" folder to follow along with this section.
 
 Deno apps can be debugged either from the browser, or with VS Code. Much like Node, Deno has `--inspect` and `--inspect-brk` flags. The `--inspect` flag starts the program and listens for the debugger. The `--inspect-brk` does the same thing except that it automatically breaks on the first line of the program.
 
