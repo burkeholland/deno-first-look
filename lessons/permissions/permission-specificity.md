@@ -10,7 +10,7 @@ description: "Burke explores the unique permissions model of Deno."
 
 ## Permission Specificity
 
-Permission in Deno come with a specificity qualifer that allows you to specify only the access your program needs. In the example above, we requested "read" access. That allows us to read any file or directory that the executing user can. It would be better if we restricted this access to juse the directory that is going to be read.
+Permission in Deno come with a specificity qualifier that allows you to specify only the access your program needs. In the example above, we requested "read" access. That allows us to read any file or directory that the executing user can. It would be better if we restricted this access to use the directory that is going to be read.
 
 Modify the permission descriptor to specify the path that read access will be granted to.
 

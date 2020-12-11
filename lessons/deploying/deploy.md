@@ -1,5 +1,5 @@
 ---
-path: "/oak/deploying"
+path: "/deploying/deploy-deno-image"
 title: "Deploying the Deno image"
 order: "8C"
 section: "8 - Deploying"
@@ -13,7 +13,7 @@ To complete this section, you'll need the following things...
 - [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?WT.mc_id=devcloud-0000-buhollan)
 - [Free Azure Account](https://azure.microsoft.com/en-us/free/)
 
-Now that we've pushed the image to Dockerhub, we can pull it in from a cloud hosting provider. Nearly all providers support containers. For the purposes of this section, we'll be using Azure.
+Now that we've pushed the image to Docker hub, we can pull it in from a cloud hosting provider. Nearly all providers support containers. For the purposes of this section, we'll be using Azure.
 
 ## Creating the site
 
@@ -37,7 +37,7 @@ Now we need to specify what sort of computing power we want for the site we're g
 az appservice plan create -g deno-exercise-group -n deno-service-plan --sku F1 --is-linux
 ```
 
-Last, we create the site and tell it to pull our image from Dockerhub.
+Last, we create the site and tell it to pull our image from Docker hub.
 
 ```bash
 az webapp create -n deno-exercise -g deno-exercise-group -p deno-service-plan -i burkeholland/denoexercises

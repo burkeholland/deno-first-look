@@ -6,7 +6,7 @@ section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-Just like Node.js has the Express web framework, Deno has a web framework as well. It's called Oak. And since Deno loves anagrams, Oak is an anagram for Koa. Koa is a web framework for Node built on the concept of generators. It's not as popular as Express given that generators haven't taken off syntatically. You might not agree with that statement, but I think it's objectively obvious that we don't see generators in much of the JavaScript code out in the wild. Or maybe you see them. But I don't.
+Just like Node.js has the Express web framework, Deno has a web framework as well. It's called Oak. And since Deno loves anagrams, Oak is an anagram for Koa. Koa is a web framework for Node built on the concept of generators. It's not as popular as Express given that generators haven't taken off syntactically. You might not agree with that statement, but I think it's objectively obvious that we don't see generators in much of the JavaScript code out in the wild. Or maybe you see them. But I don't.
 
 While Oak is modeled after Koa, it's more useful to compare it to Express because that will be the paradigm that more developers are familiar with, and that's definitely true for _this_ developer.
 

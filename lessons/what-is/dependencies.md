@@ -34,7 +34,7 @@ In the "exercise" folder, execute the following command...
 npm init
 ```
 
-You get asked about a dozen questions and it's not clear why you need any of this information. What's an entrypoint? Do you need one? Why do you need a version? Keywords? These things might be important if you are creating an npm package, but most of us are not doing that. The `package.json` is usually full of information that you don't really need. It's extraneous.
+You get asked about a dozen questions and it's not clear why you need any of this information. What's an entry point? Do you need one? Why do you need a version? Keywords? These things might be important if you are creating an npm package, but most of us are not doing that. The `package.json` is usually full of information that you don't really need. It's extraneous.
 
 ```json
 {
@@ -67,7 +67,7 @@ One last point about the `package.json` is that it contributes to the bloat of c
 
 ## node_modules
 
-The node_modules folder has become notorious for being exceptionally large. You have no idea how many depencencies you are getting yourself into, and these folders often balloon to a laughable size.
+The node_modules folder has become notorious for being exceptionally large. You have no idea how many dependencies you are getting yourself into, and these folders often balloon to a laughable size.
 
 In the folder where you initialized a project, run the following command to install the common axios web request package...
 
@@ -83,6 +83,6 @@ Now try this - install "react-scripts", the package the create-react-app uses...
 npm i react-scripts
 ```
 
-This is going to take a while, and when it's done, you'll see that your node_modules folder has grown to around 302 MB. That's....a lot. This is not a shot at React. It is not alone in requiring what seems like an innapropriate amount of dependencies just to build a website.
+This is going to take a while, and when it's done, you'll see that your node_modules folder has grown to around 302 MB. That's....a lot. This is not a shot at React. It is not alone in requiring what seems like an inappropriate amount of dependencies just to build a website.
 
-In cases where you need to deploy a Node.js app to run on a server, the entire node_modules folder needs to be there as well. This requires an `npm install` to happen on the server, or on a build server and all the assets copied in. In his talk, Ryan mentions that his primary hangup with this is that the build assset should be an executable - kind of like a .exe. Instead of needing thousands of files to run a project.
+In cases where you need to deploy a Node.js app to run on a server, the entire node_modules folder needs to be there as well. This requires an `npm install` to happen on the server, or on a build server and all the assets copied in. In his talk, Ryan mentions that his primary hang-up with this is that the build asset should be an executable - kind of like a .exe. Instead of needing thousands of files to run a project.

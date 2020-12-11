@@ -72,7 +72,7 @@ router.get("/users", (ctx) => {
 });
 ```
 
-Add a third route which also listens to the "/users" route, but listens for an additional "/name" param and echos the value back out.
+Add a third route which also listens to the "/users" route, but listens for an additional "/name" param and echoes the value back out.
 
 ```typescript
 router.get("/", (ctx) => {

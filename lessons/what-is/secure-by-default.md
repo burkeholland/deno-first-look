@@ -66,21 +66,21 @@ async function main() {
 main();
 ```
 
-This code recursively reads your home directory for anything that looks like an .env file, and then logs that out. That's all your secrets, connection strings, ect. If I can get you to run this, then I can get your database connection strings, your OAuth keys - whatever you might be keeping in those local .env files.
+This code recursively reads your home directory for anything that looks like an .env file, and then logs that out. That's all your secrets, connection strings, etc. If I can get you to run this, then I can get your database connection strings, your OAuth keys - whatever you might be keeping in those local .env files.
 
 But how do I get you to run this? Aren't you smart enough NOT to run some package you don't trust or code that just looks nefarious? After all, YOU have to run this. So how do I get you to run it?
 
-The open-source world is such a wonderful place in which nobody would ever take advantage of you, right? Fortunately, that is by and large true, but by definition, open-source is open. Anyone can publish a module to npm. There is no review process. There is no security scan that occurs. Publish to npm and that module is immediately live for anyone to consume. So I could stick that code into an npm module and immeidately make it available for anyone. But again, how do I get you to install and run this module?
+The open-source world is such a wonderful place in which nobody would ever take advantage of you, right? Fortunately, that is by and large true, but by definition, open-source is open. Anyone can publish a module to npm. There is no review process. There is no security scan that occurs. Publish to npm and that module is immediately live for anyone to consume. So I could stick that code into an npm module and immediately make it available for anyone. But again, how do I get you to install and run this module?
 
 In his talk entitled, "How to hack a Node.js app", Asim Houssain details the extent to which the Node ecosystem is routinely used to exploit, hijack and otherwise maliciously execute code on unsuspecting machines.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xb6yyztEe_A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-In this talk, he mentions many different ways that exploits can be done. But one of the most common and malicious is so simple that it's dissapointing.
+In this talk, he mentions many different ways that exploits can be done. But one of the most common and malicious is so simple that it's disappointing.
 
-### Typo Squating
+### Typo Squatting
 
-Typo squating is when a package names itself in a commonly mistyped form of a legitimate module. In his talk, Wassim gives the example of the "crossenv" package. The "crossenv" package is a commonly used utility that normalizes the passing in of command line flags across Windows and Linux. It is widely used. Someone figured out that people commonly try to install "cross-env" instead of "crossenv" because they aren't sure what the exact name of the package is. One of those packages normalizes how programs are launched, the other reads your .env files - you know - where all your secrets and keys are stored and sends them to a remote server. WHICH IS EXACTLY WHAT THE CODE ABOVE DOES.
+Typo squatting is when a package names itself in a commonly mistyped form of a legitimate module. In his talk, Wassim gives the example of the "crossenv" package. The "crossenv" package is a commonly used utility that normalizes the passing in of command line flags across Windows and Linux. It is widely used. Someone figured out that people commonly try to install "cross-env" instead of "crossenv" because they aren't sure what the exact name of the package is. One of those packages normalizes how programs are launched, the other reads your .env files - you know - where all your secrets and keys are stored and sends them to a remote server. WHICH IS EXACTLY WHAT THE CODE ABOVE DOES.
 
 Now that's pretty bad, but it can get much, much worse.
 
@@ -90,7 +90,7 @@ In preparing for this course, I ran across a headline from zdnet...
 
 "You should consider your entire system compromised".
 
-That's heavy. And it can happen to anyone. And if you read that article, it says that even uninstalling the module doens't mean you are safe. Because who knows what these packages installed and ran in the background?
+That's heavy. And it can happen to anyone. And if you read that article, it says that even uninstalling the module doesn't mean you are safe. Because who knows what these packages installed and ran in the background?
 
 Node.js is simply not a safe runtime. It is wide open and is based on a wide open package system. While that makes is super convenient to use, it is by definition also relatively easy for seriously bad things to happen to your programs, even when you are paying close attention. There is a direct trade-off between convenience and security. Node has optimized for convenience.
 

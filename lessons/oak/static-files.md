@@ -1,14 +1,14 @@
 ---
 path: "/oak/simple-oak"
-title: "Servering Static Files"
+title: "Serving Static Files"
 order: "7E"
 section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-> Make sure you are on the "7-servering-static-files" branch to follow along with this section.
+> Make sure you are on the "7-serving-static-files" branch to follow along with this section.
 
-Serving up static files is arguably the most basic feature of a web server. For Oak, it's relatively easy to serve up static files without much cermony.
+Serving up static files is arguably the most basic feature of a web server. For Oak, it's relatively easy to serve up static files without much ceremony.
 
 For this project, we want to have a "public" directory and everything that goes in that folder should be accessible from our templates with the "/public" path.
 
@@ -113,7 +113,7 @@ ApplicationErrorEvent {
 }
 ```
 
-The key here is "no uch file or directory". This means that it can't find the file that we're looking for. Why? The reason is that we have only provided a relative path. In order for Deno to find this file, we need to pass the full path on the system. To do that, we can pass an options object as a third parameter on the `send` function. That object has a property called "root". This is where we need to specify the path of the root directory - or the directory that we're currently in. You may remember from earlier in this course that the `Deno` object has a `cwd` method which will return the current working directory. We then need to append `public` on the root since the "path" parameter won't contain this part of the path to the requested file.
+The key here is "no such file or directory". This means that it can't find the file that we're looking for. Why? The reason is that we have only provided a relative path. In order for Deno to find this file, we need to pass the full path on the system. To do that, we can pass an options object as a third parameter on the `send` function. That object has a property called "root". This is where we need to specify the path of the root directory - or the directory that we're currently in. You may remember from earlier in this course that the `Deno` object has a `cwd` method which will return the current working directory. We then need to append `public` on the root since the "path" parameter won't contain this part of the path to the requested file.
 
 ```typescript
 router.get("/public/:path+", async (ctx) => {
@@ -141,4 +141,4 @@ Run the program again. This time, the file is served up from the "public/stylesh
 
 ![styled Deno app](../images/deno-styled.jpg)
 
-**Bonus** - Instead of logging an error, return the error via a view IF and only if the application is run with the DEVELOPMENT envrionment variable.
+**Bonus** - Instead of logging an error, return the error via a view IF and only if the application is run with the DEVELOPMENT environment variable.

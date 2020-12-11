@@ -1,5 +1,5 @@
 ---
-path: "/dependencies/think-like-a-browser.md"
+path: "/dependencies/think-like-a-browser"
 title: "Thinking like a browser"
 order: "4A"
 section: "4 - Understanding Dependencies"
@@ -20,11 +20,11 @@ Deno follows the [ECMAScript standard](https://developer.mozilla.org/en-US/docs/
 
 ## Caching
 
-Caching is an important part of how Deno handles dependencies. Since it uses the URL reference as the method to inlcude them, you wouldn't want it to try and download those everytime you ran the program.
+Caching is an important part of how Deno handles dependencies. Since it uses the URL reference as the method to include them, you wouldn't want it to try and download those every time you ran the program.
 
 Instead, Deno downloads a dependency the first time that you run the program and until the dependency changes or you force an update, that cache is where the dependency is served from.
 
-How Deno handles dependencies is different based on whether or not you are using a local dependency (importing a file in the current project) or a remote dependency (referencing a third-party module by URL). In the next few sections, we'll look at how Deno handles these two scenarios, and some best practices for organizing dependenices in Deno.
+How Deno handles dependencies is different based on whether or not you are using a local dependency (importing a file in the current project) or a remote dependency (referencing a third-party module by URL). In the next few sections, we'll look at how Deno handles these two scenarios, and some best practices for organizing dependencies in Deno.
 
 ## Getting Dependency Info
 

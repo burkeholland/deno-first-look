@@ -1,5 +1,5 @@
 ---
-path: "/dependencies/best-practices.md"
+path: "/dependencies/best-practices"
 title: "Best Practices"
 order: "4D"
 section: "4 - Understanding Dependencies"
@@ -28,6 +28,6 @@ The common pushback I hear on this idea is "I can't install the module if I'm on
 
 For those who still aren't convinced, let me leave you with this thought: Someone once suggested that we put HTML in JavaScript. I laughed at that person when I first heard that suggestion. Today, React is quite possibly the most popular JavaScript framework in the world, and we don't think twice about putting HTML in our JavaScript. In fact, it works quite well. In my humble opinion, having your markup and code in the same component file is BETTER than not. It's a better developer experience.
 
-I'm not saying that Deno is the React of JavaScript runtimes. I'm not saying that importing from URL's is going to ultimately be the better developer experience. But I am saying that sometimes we have to allow ourselves to examine possiblities that don't look so good on the surface.
+I'm not saying that Deno is the React of JavaScript runtimes. I'm not saying that importing from URL's is going to ultimately be the better developer experience. But I am saying that sometimes we have to allow ourselves to examine possibilities that don't look so good on the surface.
 
 Give it a chance. I think you'll find that it's a relatively simple solution to the dependency problem.

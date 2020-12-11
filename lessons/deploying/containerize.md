@@ -1,5 +1,5 @@
 ---
-path: "/oak/deploying"
+path: "/deploying/containerize-deno-app"
 title: "Containerizing a Deno Application"
 order: "8B"
 section: "8 - Deploying"
@@ -29,7 +29,7 @@ That same line will be how you run it when you deploy it. Just like any applicat
 
 Of course, you can always run anything you like on your own server or a server/VM you rent from a cloud hosting provider (hopefully Azure, but you do you).
 
-A PaaS is short for "Platform as a Service". A PaaS is a hosting provider where you only provide your code. They provide the runtime and handle starting and stopping your application. Heroku is probably the best known for this, although you can find them on Azure App Service, Google Cloud Platform and Amazong Web Services as well.
+A PaaS is short for "Platform as a Service". A PaaS is a hosting provider where you only provide your code. They provide the runtime and handle starting and stopping your application. Heroku is probably the best known for this, although you can find them on Azure App Service, Google Cloud Platform and Amazon Web Services as well.
 
 Nearly all of these PaaS providers will allow you to run your Deno app on their PaaS. You can find docs for Heroku, Azure and I'm sure many others. Since each one of these is specific to the hosting platform and not to Deno, I'd like to instead focus on something a bit more generic, and that's containers.
 
@@ -45,9 +45,9 @@ We need a base image to start from - one that has Deno in it. While Deno [doesn'
 FROM hayd/alpine-deno:1.5.4
 ```
 
-This image contains not only Deno, but all of the deno environment configuration that we would normally need to do to get autocompletions and the like. It also contains a default user called "deno" so that your application doesn't run as root with too many privilages.
+This image contains not only Deno, but all of the deno environment configuration that we would normally need to do to get autocompletions and the like. It also contains a default user called "deno" so that your application doesn't run as root with too many privileges.
 
-Now that we've got that image, we need to define our workdirectory - or rather - the directory where our application is going to go inside the container. You can call it anything you like. I usually just call it, "app".
+Now that we've got that image, we need to define our working directory - or rather - the directory where our application is going to go inside the container. You can call it anything you like. I usually just call it, "app".
 
 ```dockerfile
 FROM hayd/alpine-deno:1.5.4

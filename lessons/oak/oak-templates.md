@@ -35,7 +35,7 @@ export { Application, Router, Handlebars };
 
 > I find it interesting that while Deno aims to avoid centralizing dependencies, it has effectively done so by creating this repository at deno.land/x. We may very well see npm again by another name.
 
-To use the Handlebars library, we need to initialize an instance and pass in some configuration. To do this, we'll create a shared object that the routers can import and then use to return template rendered views. Even though we're importing a file that calles "new" multiple times, the same instance should be reused as it is cached by the runtime.
+To use the Handlebars library, we need to initialize an instance and pass in some configuration. To do this, we'll create a shared object that the routers can import and then use to return template rendered views. Even though we're importing a file that called "new" multiple times, the same instance should be reused as it is cached by the runtime.
 
 Let's create a root folder called "shared" and add an "hbs.ts" file inside. In that file, we'll need to import the Handlebars dependency from our "deps.ts" file.
 

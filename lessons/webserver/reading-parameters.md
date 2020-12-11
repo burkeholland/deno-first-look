@@ -69,7 +69,7 @@ Pass in the name parameter on the URL...
 http://localhost:3000?name=World
 ```
 
-The browser should return whatever name you pass in. If not, you should get a 500 error with a messae saying that a "name" parameter is required.
+The browser should return whatever name you pass in. If not, you should get a 500 error with a message saying that a "name" parameter is required.
 
 ## Route Parameters
 
