@@ -8,7 +8,7 @@ description: "Burke explores the unique permissions model of Deno."
 
 > Make sure you are on the [5-granting-permissions](https://github.com/burkeholland/deno-exercises/tree/5-granting-permissions) branch to follow along with this section.
 
-One of the core tenants of Deno is "secure by default". As we discussed in the section of the same name, this means that by default, Deno can't do very much without your permission. It can't read your file system, it can't make HTTP calls - it's completely sandboxed. 
+One of the core tenants of Deno is "secure by default". As we discussed in the section of the same name, this means that by default, Deno can't do much without your permission. It can't read your file system, it can't make HTTP calls - it's completely sandboxed. 
 
 In the "app.ts" file, attempt to read all of the files in the current directory. This can be done with the "Deno" object "read" method.
 
