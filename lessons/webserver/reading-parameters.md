@@ -73,7 +73,7 @@ The browser should return whatever name you pass in. If not, you should get a 50
 
 ## Route Parameters
 
-But what about route parameters? Query strings are simple enough, but how can we parse out a route parameter such as "/name"? We can do that, but we'll need more than what Deno offers with its standard library. And, unfortunately, we'll need more than what we can from it's current third-party library offerings as well.
+But what about route parameters? Query strings are simple enough, but how can we parse out a route parameter such as `/:name`? We can do that, but we'll need more than what Deno offers with its standard library. And, unfortunately, we'll need more than what we can from it's current third-party library offerings as well.
 
 But what about npm?
 
@@ -93,7 +93,7 @@ There are a few services out there that will allow you to import a package from 
 module.exports = Route;
 ```
 
-That's CommonJS. It's not going to work with Deno. So what do we do? Well, believe it or not there is a service called "jspm" which will take a module by URL and give you an ES Module compatible import/export. All we have to do is run this module through that service and it will let us import the module...
+That's CommonJS. It's not going to work with Deno. So what do we do? Well, believe it or not there is a service called ["jspm"](https://jspm.org/) which will take a module by URL and give you an ES Module compatible import/export. All we have to do is run this module through that service and it will let us import the module...
 
 ```typescript
 import routeParser from "https://dev.jspm.io/route-parser@0.0.5";
@@ -101,7 +101,7 @@ import routeParser from "https://dev.jspm.io/route-parser@0.0.5";
 
 But we've got TypeScript here. Which means we need type definitions to use this library. How do we import those?
 
-First, the types have to exist. Fortunately for us, searching for "route parser types" in npm will reveal that the "DefinitelyTyped" library has typings for "route parser".
+First, the types have to exist. Fortunately for us, searching for "route parser types" in npm will reveal that the ["DefinitelyTyped"](https://definitelytyped.org/) library has [typings for "route parser"](https://www.npmjs.com/package/@types/route-parser).
 
 We need this file served up raw. In that case, the "unpkg" service will work just fine...
 
@@ -143,7 +143,7 @@ for await (const req of server) {
   if (match.name) {
     req.respond({ body: `Hello, ${match.name}` });
   } else {
-    req.response({ body: "Please pass a name route." });
+    req.respond({ body: "Please pass a name route." });
   }
 }
 ```

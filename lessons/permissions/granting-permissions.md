@@ -36,7 +36,7 @@ at async Object.[Symbol.asyncIterator] (deno:cli/rt/30_fs.js:125:16)
 at async file:///home/burkeholland/dev/deno-first-look-exercises/app.ts:3:18
 ```
 
-It says to run again with the "--allow-read" flag. Let's do that.
+It says to run again with the `--allow-read` flag. Let's do that.
 
 ```bash
 deno run --allow-read app.ts
