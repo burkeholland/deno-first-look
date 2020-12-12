@@ -44,7 +44,7 @@ If you'd like to connect, you can [find me on Twitter](https://twitter.com/burke
 
 ## Why Was This Course Created?
 
-![Frontend Masters Logo](images/FrontendMastersLogo.png)
+![Frontend Masters Logo](../images/FrontendMastersLogo.png)
 
 I think the key to staying sane in this industry is to always be open to learning new things. It's also good to learn to learn-and-forget. You'll pick up things that stay with you and pay dividends down the road. Deno may be a ripple in a vast and endless ocean of JavaScript projects, libraries and frameworks. Or it may become the ocean itself. We don't know and that can cause distress. Learning about something removes the fear and intimidation that causes us to avoid things. This is true for everything in life, not just technology. Try it out and you'll see what I mean. If something scares you, learn more about it and will lose its power.
 
