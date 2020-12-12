@@ -17,8 +17,8 @@ First let's look at how Deno handles local dependencies. We'll do that by creati
 
 ```typescript
 const utils = {
-    function reverse(text: string) {
-        return text.split('').reverse().join();
+    reverse: (text: string) => {
+        return text.split('').reverse().join('');
     }
 }
 
