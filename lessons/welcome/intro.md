@@ -26,7 +26,7 @@ The last time I did a course, I got a lot of PR's on mistakes made throughout. M
 
 ## Who Am I?
 
-![Yours truly at the Badlands in South Dakota](images/me.jpg)
+![Yours truly at the Badlands in South Dakota](../images/me.jpg)
 
 My name is Burke Holland, and I am a Content Engineer at Microsoft, where I do advocacy around VS Code, GitHub, Azure and all things JavaScript. I have a cursor on my face.
 
@@ -34,7 +34,7 @@ I work with a team of great people and together we try and make Microsoft tools,
 
 I love teaching because it's simply the best way to learn anything. It also lets me connect with people and through this, I have learned that we are all far more alike than we are different. Mainly, we are all learning, and nobody has it all figured out. If you feel like you are the only one who doesn't understand things, let me assure you, you are not. There are at least 2 of us, and I am one. I love this diagram. I think it says it all.
 
-![](images/what-i-know.png)
+![](images/../what-i-know.png)
 
 _Image Credit:_ [Alicia Liu](https://medium.com/counter-intuition/overcoming-impostor-syndrome-bdae04e46ec5)
 
