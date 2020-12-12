@@ -12,7 +12,7 @@ A key benefit of web servers is being able to dynamically compose templates. In 
 
 ## Finding a template engine
 
-Deno has a surprising amount of third-part libraries to choose from given how new it is. If we [search Deno's third party registry](https://deno.land/x?query=template) for template libraries, we see there are quite a few to choose from. This includes some well known libraries like Mustache and Handlebars. Given that I usually opt for Handlebars with Express, we'll be using that one for this Oak project.
+Deno has a surprising amount of third-party libraries to choose from given how new it is. If we [search Deno's third party registry](https://deno.land/x?query=template) for template libraries, we see there are quite a few to choose from. This includes some well known libraries like Mustache and Handlebars. Given that I usually opt for Handlebars with Express, we'll be using that one for this Oak project.
 
 ![](../images/deno-templates.jpg)
 

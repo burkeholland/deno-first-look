@@ -16,7 +16,7 @@ Oak is modeled after Koa and Koa is the successor to Express. Given all of that,
 
 Express also provides a nice scaffolding tool that has made it's adoption rather quick. This generator scaffolds out an opinionated folder structure that helps get you moving in the right direction.
 
-In this next section, we're going to build an opinionated project structure for Koa that mimics what you get today with Express. Before we do that, let's look at what Express does today.
+In this next section, we're going to build an opinionated project structure for Oak that mimics what you get today with Express. Before we do that, let's look at what Express does today.
 
 ## Generating an Express app
 
