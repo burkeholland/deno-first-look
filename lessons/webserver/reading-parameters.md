@@ -77,7 +77,7 @@ But what about route parameters? Query strings are simple enough, but how can we
 
 But what about npm?
 
-Let's do a quick check. Yep - looks like there is a library ready to go that will parse route parameters for us no problem. This is why Node is so great. Every problem is one package install away. Or maybe that's the problem with Node. I'll let you decide.
+Let's do a quick check. Yep - looks like there is a package called [route-parser](https://www.npmjs.com/package/route-parser) ready to go that will parse route parameters for us no problem. This is why Node is so great. Every problem is one package install away. Or maybe that's the problem with Node. I'll let you decide.
 
 In any event, we're going to get a chance to see how we can use Node modules in our program.
 

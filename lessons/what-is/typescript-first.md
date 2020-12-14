@@ -28,7 +28,7 @@ Strongly typed languages OO languages, by contrast, have a genuinely accepted se
 
 ## Better Tooling
 
-VS Code provides some legit tooling for JavaScript. It's quite good and provides some things that VS Code simply cannot do with JavaScript.
+VS Code provides some legit tooling for TypeScript. It's quite good and provides some things that VS Code simply cannot do with JavaScript.
 
 In the "exercise" project, install the Cosmos DB package from npm. We won't be doing anything with it, but it's a great example of what benefits you can get when you adopt TypeScript as your language...
 

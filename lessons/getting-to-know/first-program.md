@@ -128,15 +128,11 @@ Notice that there is no check this time and the result is immediate. And there i
 
 When executing JavaScript files in Node, you don't need to pass a file extension. This is why Express apps have a file called "bin/www" with no extension.
 
-Deno doesn't support this and throws an error. You need to specify the file extension. This is something that will be important when we talk about dependencies as well.
+Deno supports this as well. However, it will only recognize a file as TypeScript if the file has a .ts extension. In any event, the follow code works in Node and Deno...
 
 ```bash
-node run app
-Hello  World
-
-
-deno run app
-error: Cannot resolve module "file:///C:/dev/burkeholland/deno-first-look-windows/app"
+node app || deno run app
+Hello  World    
 ```
 
 ## Executing remote scripts

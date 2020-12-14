@@ -22,7 +22,7 @@ Change the formatting in the `app.ts` file so that a default value is passed for
 
 ```typescript
 const message: String = Deno.args[0] || 'World';
-console.log(`Hello ${message}`.toUpperCase());
+console.log(`Hello ${message}`);
 ```
 
 Run the formatter on the `app.ts` file

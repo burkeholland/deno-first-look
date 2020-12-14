@@ -1,5 +1,5 @@
 ---
-path: "/oak/simple-oak"
+path: "/oak/static-files"
 title: "Serving Static Files"
 order: "7E"
 section: "7 - Oak web framework"

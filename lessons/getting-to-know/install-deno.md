@@ -76,4 +76,4 @@ You might remember I mentioned earlier that when Ryan created Node.js, he was mo
 
 ![Benchmark for Deno vs Node HTTP Performance](../images/deno-vs-node-benchmarks.jpg)
 
-So, not a huge gap to close for Deno. I've often heard this complaint about Deno when comparing it to Node.js, and I'm just not sure the difference is great enough to care and certainly not a gap too big for Deno to close. And besides, most of us are not working with systems that are going to experience the kind of load that is going to necessitate agonizing over a char like the one above.
+So, not a huge gap to close for Deno. I've often heard this complaint about Deno when comparing it to Node.js, and I'm just not sure the difference is great enough to care and certainly not a gap too big for Deno to close. And besides, most of us are not working with systems that are going to experience the kind of load that is going to necessitate agonizing over a chart like the one above.

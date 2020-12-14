@@ -1,6 +1,6 @@
 ---
 path: "/what-is/why-oh-why"
-title: "Why"
+title: "What & Why"
 order: "2A"
 description: "Why oh why do we need another JavaScript runtime?"
 section: "2 - What is Deno"
