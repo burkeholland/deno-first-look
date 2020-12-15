@@ -1,7 +1,7 @@
 ---
 path: "/deploying/containerize-deno-app"
 title: "Containerizing a Deno Application"
-order: "8B"
+order: "8A"
 section: "8 - Deploying"
 description: "Burke looks at how to deploy an application built with Deno"
 ---
@@ -13,9 +13,21 @@ In order to complete this section, you'll need the following installed...
 - [Docker Community Edition](https://docs.docker.com/get-docker/)
 - [Docker extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker&WT.mc_id=devcloud-0000-buhollan)
 
-A Deno application can be deployed to production in 2 different ways - bundled and unbundled. While there is a long-term goal (and open issue) for compiling to an ".exe" at some point in the future, we are not there yet. It should be noted that Ryan stated this goal in his "10 things I regret about Node" talk as well.
+A Deno application can be deployed to production in 3 different ways - unbundled, bundled, and compiled.
 
-Whether you deploy an application bundled or unbundled, the way that you run it is the same as how you run it in development. For instance, we've been running our Oak web project so far with...
+### Bundled, Unbunbled, and Compiled
+
+Unbundled is what we're working with right now. It's just your project as it is. This is what you would be used to doing with most Node.js projects.
+
+Bundled is where all of your source code is built into a single .js file that you can deploy. It will run as long as Deno is installed. Unfortunately, at the time of this writing, the bundle command isn't reliable and produces an output - at least for this project where the code is out of order. There is an open issue for this, but it means that we can't deploy this project as a bundle. 😟
+
+Compiled is very interesting. It compiles your project down into a single executable that will run without Deno. All you need is that executable and nothing else. This is new in 1.6. Caveats are that it isn't cross-platform. You have to compile for the platform you're targeting on that same platform. So if I compile it on Windows, it will not run on Linux and vice-versa.
+
+Unfortunately - again - the `compile` command appears to use the bundle command, which, as we've discussed, isn't working at the moment for all projects - so we can't use the "compile" either.
+
+So that leaves us with unbundled.
+
+The way that you run an unbundled app in production is the same as how you run it in development. For instance, we've been running our Oak web project so far with...
 
 ```bash
 deno run -A --unstable app.ts
