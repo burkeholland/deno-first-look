@@ -6,7 +6,7 @@ section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-> Make sure you switch to the "7-simple-oak-server" branch to follow along with this section.
+> Make sure you switch to the [7-simple-oak-server](https://github.com/burkeholland/deno-exercises/tree/7-oak-simple-server) branch to follow along with this section.
 
 Oak is a [third-party library for Deno](https://oakserver.github.io/oak/). It's just like using an npm package with Node.
 
@@ -32,7 +32,7 @@ app.use((ctx, next) => {
 });
 ```
 
-Tell the app to listen on port 3000
+Tell the app to listen on port 3000.
 
 ```typescript
 import { Application } from "https://deno.land/x/oak/mod.ts";
@@ -47,7 +47,7 @@ console.log(`Now listening on http://0.0.0.0:3000`);
 app.listen("0.0.0.0:3000");
 ```
 
-- Run the app with the `--allow-net`, `--unstable` and --watch flags (Oak and `--watch` both require the `--unstable` flag.).
+Run the app with the `--allow-net`, `--unstable` and --watch flags (Oak and `--watch` both require the `--unstable` flag.).
 
 ```bash
 deno run --allow-net --unstable app.ts
@@ -55,7 +55,7 @@ deno run --allow-net --unstable app.ts
 
 Visit the application in a browser window on port 3000.
 
-> Note that if you didn't quite the previous application we built in the Web Server exercise, you may still have something running on port 3000. If that's the case, make sure you quit that process.
+> Note that if you didn't stop the previous application we built in the Web Server exercise, you may still have something running on port 3000. If that's the case, make sure you quit that process.
 
 ![](../images/simple-oak-app.jpg)
 

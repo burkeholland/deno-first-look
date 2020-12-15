@@ -6,9 +6,9 @@ section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-> Make sure you switch to the "7-oak-router" branch to follow along with this section.
+> Make sure you switch to the [7-oak-router](https://github.com/burkeholland/deno-exercises/tree/7-oak-router) branch to follow along with this section.
 
-Oak contains prebuild Router middleware that will allow you to handle different routes, parameters and queries. It's basically doing a lot of string parsing and pattern matching that you would otherwise have to do yourself.
+Oak contains prebuilt Router middleware that will allow you to handle different routes, parameters and queries. It's basically doing a lot of string parsing and pattern matching that you would otherwise have to do yourself.
 
 Include the "Router" object in the Oak import.
 
@@ -56,7 +56,7 @@ await app.listen("0.0.0.0:3000");
 
 Run the app with `deno run --allow-net app.ts`
 
-You should see the same thing you had before - a simple page saying "Hello Oak". Note, though, that this route will only respond to the root route, and only if the request is a GET. Before, the application would respond to any request at all.
+You should see the same thing you had before - a simple page saying "Welcome to Oak". Note, though, that this route will only respond to the root route, and only if the request is a GET. Before, the application would respond to any request at all.
 
 ## Adding additional routes
 
@@ -72,7 +72,7 @@ router.get("/users", (ctx) => {
 });
 ```
 
-Add a third route which also listens to the "/users" route, but listens for an additional "/name" param and echoes the value back out.
+Add a third route which also listens to the "/users" route, but listens for an additional "/:name" param and echoes the value back out.
 
 ```typescript
 router.get("/", (ctx) => {
@@ -104,8 +104,8 @@ In order to do that, we're going to need to access our dependencies from more th
 - Export the `Application` and `Router` objects.
 
 ```typescript
-import { Application, Router } from "https://deno.land/x/oak/mod.ts";
-export { Application, Router };
+import { Application, Router, Context } from "https://deno.land/x/oak/mod.ts";
+export { Application, Router, Context };
 ```
 
 In the "app.ts" file, import the `Application` and `Router` objects from the "deps.ts" file
@@ -120,16 +120,16 @@ In order to specify routes in the route files, we need a reference to the router
 
 - Create a folder called "routes"
 - Create a file called "indexRouter.ts" in the "routes" folder.
-- Import the "Routes" object from the "deps.ts" file
+- Import the "Router" object from the "deps.ts" file
 
 ```typescript
-import { Router } from "deps.ts";
+import { Router } from "../deps.ts";
 ```
 
 Create a new instance of the router object
 
 ```typescript
-import { Router } from "deps.ts";
+const router = new Router();
 ```
 
 Create a function called "use" which will accept a path and a route. We'll use that path and route to configure all of the index routes.
@@ -144,7 +144,6 @@ Move the index route to this new "indexRouter.ts" file
 
 ```typescript
 import { Context, Router } from "../deps.ts";
-import hbs from "../shared/hbs.ts";
 
 export function use(path: string, router: Router) {
   router.get(`${path}`, async (ctx: Context) => {
@@ -181,7 +180,9 @@ const app = new Application();
 const router = new Router();
 
 indexRouter.use("/", router);
-usersRouter.use("/users", router);
+userRouter.use("/users", router);
+
+app.use(router.routes())
 
 console.log(`Now listening on http://0.0.0.0:3000`);
 await app.listen("0.0.0.0:3000");

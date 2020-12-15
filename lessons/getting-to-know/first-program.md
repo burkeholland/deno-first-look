@@ -6,7 +6,7 @@ section: "3 - Getting to know Deno"
 description: "Burke goes over how to write your first program with Deno and execute it with the Deno CLI."
 ---
 
-> Switch to the "3-your-first-program" branch to follow along with this section.
+> Switch to the [3-your-first-program](https://github.com/burkeholland/deno-exercises/tree/3-your-first-program) branch to follow along with this section.
 
 Deno programs can be written in TypeScript or JavaScript. Either will work.
 
@@ -69,7 +69,7 @@ Inside that folder, you will find several files...
 
 - app.ts.bundleinfo
 - app.ts.js
-- app.ts.metadata
+- app.ts.meta
 
 Open this folder in VS Code by executing the following command in the terminal from the same folder where these files are located.
 

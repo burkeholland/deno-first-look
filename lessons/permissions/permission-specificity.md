@@ -6,7 +6,7 @@ section: "5 - Permissions"
 description: "Burke explores the unique permissions model of Deno."
 ---
 
-> Make sure you are on the "5-permission-specficity" branch to follow along with this section.
+> Make sure you are on the [5-permission-specificity](https://github.com/burkeholland/deno-exercises/tree/5-permission-specificity) branch to follow along with this section.
 
 ## Permission Specificity
 
@@ -22,7 +22,7 @@ Run the program again with `deno run --unstable app.ts`. Notice that this time, 
 
 ```bash
 Check file:///home/burkeholland/dev/deno-first-look-exercises/app.ts
-️⚠️ Deno requests read access to ".". Grant? [g/d (g = grant, d = deny)]
+️⚠️ Deno requests read access to "../". Grant? [g/d (g = grant, d = deny)]
 ```
 
 It is better to ask for only the permissions your app needs.

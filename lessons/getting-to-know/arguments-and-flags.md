@@ -6,7 +6,7 @@ section: "3 - Getting to know Deno"
 description: "Burke looks at how to pass arguments and flags to the Deno CLI"
 ---
 
-> Switch to the "3-cli-tour" branch to follow along with this exercise.
+> Switch to the [3-cli-tour](https://github.com/burkeholland/deno-exercises/tree/3-cli-tour) branch to follow along with this exercise.
 
 For a full list of arguments you can pass to Deno, execute `deno -h`.
 

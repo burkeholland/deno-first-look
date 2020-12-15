@@ -6,7 +6,7 @@ section: "3 - Getting to know Deno"
 description: "Burke covers how to install Deno, and takes a look at the Deno CLI, REPL and what options you need to be aware of."
 ---
 
-> Switch to the "3-tooling" branch to follow along with this section
+> Switch to the [3-tooling](https://github.com/burkeholland/deno-exercises/tree/3-tooling) branch to follow along with this section
 
 Tooling is available for Deno in the form of the Deno VS Code extension. The primary value of the extension is that it provides intellisense for Deno and a debugger.
 
@@ -15,7 +15,6 @@ Tooling is available for Deno in the form of the Deno VS Code extension. The pri
 The extension is installed from the VS Code Extension gallery either through VS Code, or via the [extension gallery web site](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno).
 
 By default, the extension won't appear to do anything. This is because it is disabled by default. You'll need to enable the Deno extension for your Deno code by adding the following line to your **Workspace** settings. Workspace is bolded there because that is what Deno recommends that you do, and at the time of this writing, enabling it in your user settings appears to have no affect.
-
 In VS Code, open the Command Palette and select "Preferences: Open Workspace Settings (JSON)". When you do that, a new folder will be added to your project called ".vscode". Inside there is a "settings.json" file. These settings ONLY apply to the current project and are not global. The file should be empty. Add the following line to enable the Deno extension.
 
 ```json

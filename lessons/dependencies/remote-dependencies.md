@@ -6,7 +6,7 @@ section: "4 - Understanding Dependencies"
 description: "Burke dives into how Deno handles dependencies."
 ---
 
-> Make sure you are on the "4-remote-dependencies" branch to follow along with this section.
+> Make sure you are on the [4-remote-dependencies](https://github.com/burkeholland/deno-exercises/tree/4-remote-dependencies) branch to follow along with this section.
 
 "Remote" dependencies are how Deno handles what you would know today as "npm" packages. These are libraries that you might consume and use that someone else has written.
 
@@ -66,11 +66,11 @@ C:\Users\burkeholland\AppData\Local\deno\gen\file\C\dev\burkeholland\deno-first-
 
 The `app.ts` file now looks like this...
 
-    ```javascript
-    import * as path from "https://deno.land/std@0.73.0/path/mod.ts";
-    console.log(path.basename("/files/folders/folder/file.txt"));
-    //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjo...
-    ```
+```javascript
+import * as path from "https://deno.land/std@0.73.0/path/mod.ts";
+console.log(path.basename("/files/folders/folder/file.txt"));
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjo...
+```
 
 But we know that Deno doesn't download that file every time we run the program. We know that the first time we try and use it, Deno downloads it to the "deps" cache.
 
@@ -100,4 +100,4 @@ We can run `deno info app.ts` and it will show us a tree of the dependencies tha
 
 ![](../images/deno-info-path.jpg)
 
-Now let's take a moment and address the elephant in the room - which is that importing modules from URL's feels....completely nuts.
+Now let's take a moment and address the elephant in the room - which is that importing modules from URL's feels... completely nuts.

@@ -6,13 +6,13 @@ section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-> Make sure you are on the "7-oak-templates" branch to follow along with this section.
+> Make sure you are on the [7-oak-templates](https://github.com/burkeholland/deno-exercises/tree/7-oak-templates) branch to follow along with this section.
 
 A key benefit of web servers is being able to dynamically compose templates. In order to do that with Oak, we need to add a templating engine. In this section, we'll add the templating engine and change the router to render the template instead of just text.
 
 ## Finding a template engine
 
-Deno has a surprising amount of third-part libraries to choose from given how new it is. If we [search Deno's third party registry](https://deno.land/x?query=template) for template libraries, we see there are quite a few to choose from. This includes some well known libraries like Mustache and Handlebars. Given that I usually opt for Handlebars with Express, we'll be using that one for this Oak project.
+Deno has a surprising amount of third-party libraries to choose from given how new it is. If we [search Deno's third party registry](https://deno.land/x?query=template) for template libraries, we see there are quite a few to choose from. This includes some well known libraries like Mustache and Handlebars. Given that I usually opt for Handlebars with Express, we'll be using that one for this Oak project.
 
 ![](../images/deno-templates.jpg)
 
