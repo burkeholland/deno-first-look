@@ -59,8 +59,14 @@
 <li><a href="https://docs.docker.com/get-docker/">Docker Community Edition</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker&#x26;WT.mc_id=devcloud-0000-buhollan">Docker extension for VS Code</a></li>
 </ul>
-<p>A Deno application can be deployed to production in 2 different ways - bundled and unbundled. While there is a long-term goal (and open issue) for compiling to an ".exe" at some point in the future, we are not there yet. It should be noted that Ryan stated this goal in his "10 things I regret about Node" talk as well.</p>
-<p>Whether you deploy an application bundled or unbundled, the way that you run it is the same as how you run it in development. For instance, we've been running our Oak web project so far with...</p>
+<p>A Deno application can be deployed to production in 3 different ways - unbundled, bundled, and compiled.</p>
+<h3 id="bundled-unbunbled-and-compiled" style="position:relative;"><a href="#bundled-unbunbled-and-compiled" aria-label="bundled unbunbled and compiled permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bundled, Unbunbled, and Compiled</h3>
+<p>Unbundled is what we're working with right now. It's just your project as it is. This is what you would be used to doing with most Node.js projects.</p>
+<p>Bundled is where all of your source code is built into a single .js file that you can deploy. It will run as long as Deno is installed. Unfortunately, at the time of this writing, the bundle command isn't reliable and produces an output - at least for this project where the code is out of order. There is an open issue for this, but it means that we can't deploy this project as a bundle. 😟</p>
+<p>Compiled is very interesting. It compiles your project down into a single executable that will run without Deno. All you need is that executable and nothing else. This is new in 1.6. Caveats are that it isn't cross-platform. You have to compile for the platform you're targeting on that same platform. So if I compile it on Windows, it will not run on Linux and vice-versa.</p>
+<p>Unfortunately - again - the <code class="language-text">compile</code> command appears to use the bundle command, which, as we've discussed, isn't working at the moment for all projects - so we can't use the "compile" either.</p>
+<p>So that leaves us with unbundled.</p>
+<p>The way that you run an unbundled app in production is the same as how you run it in development. For instance, we've been running our Oak web project so far with...</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">deno run -A --unstable app.ts</code></pre></div>
 <p>That same line will be how you run it when you deploy it. Just like any application, you basically have 3 options for deployment with Deno...</p>
 <ol>

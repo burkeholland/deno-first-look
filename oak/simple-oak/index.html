@@ -54,7 +54,7 @@
       }
     })
   </script><link as="script" rel="preload" href="/deno-first-look/webpack-runtime-a4f893802085df5ab943.js"/><link as="script" rel="preload" href="/deno-first-look/styles-407fe62976dc5310c43e.js"/><link as="script" rel="preload" href="/deno-first-look/framework-6b40266ad63d0bc0fb45.js"/><link as="script" rel="preload" href="/deno-first-look/app-0525a1c152d709795228.js"/><link as="script" rel="preload" href="/deno-first-look/component---src-templates-lesson-template-js-7ed797bf39332f15176c.js"/><link as="fetch" rel="preload" href="/deno-first-look/page-data/oak/simple-oak/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/deno-first-look/page-data/sq/d/2959687377.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/deno-first-look/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div><div class="navbar navbar-light gradient"><div class="navbar navbar-content"><a class="navbar-brand" href="/deno-first-look/"><h1>Deno First Look</h1></a><h2>7 - Oak web framework – A Simple Oak Server</h2></div></div><div class="main"><div class="lesson-container"><div class="lesson"><h1>A Simple Oak Server</h1><h2></h2><div class="lesson-content"><blockquote>
-<p>Make sure you switch to the "7-simple-oak-server" branch to follow along with this section.</p>
+<p>Make sure you switch to the <a href="https://github.com/burkeholland/deno-exercises/tree/7-oak-simple-server">7-simple-oak-server</a> branch to follow along with this section.</p>
 </blockquote>
 <p>Oak is a <a href="https://oakserver.github.io/oak/">third-party library for Deno</a>. It's just like using an npm package with Node.</p>
 <p>In the <code class="language-text">app.ts</code> file, import the <code class="language-text">Application</code> object from the Oak library...</p>
@@ -67,7 +67,7 @@
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> next<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
   ctx<span class="token punctuation">.</span>response<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token string">"Hello World"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-<p>Tell the app to listen on port 3000</p>
+<p>Tell the app to listen on port 3000.</p>
 <div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Application <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"https://deno.land/x/oak/mod.ts"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Application</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -78,13 +78,11 @@ app<span class="token punctuation">.</span><span class="token function">use</spa
 
 <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Now listening on http://0.0.0.0:3000</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token string">"0.0.0.0:3000"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-<ul>
-<li>Run the app with the <code class="language-text">--allow-net</code>, <code class="language-text">--unstable</code> and --watch flags (Oak and <code class="language-text">--watch</code> both require the <code class="language-text">--unstable</code> flag.).</li>
-</ul>
+<p>Run the app with the <code class="language-text">--allow-net</code>, <code class="language-text">--unstable</code> and --watch flags (Oak and <code class="language-text">--watch</code> both require the <code class="language-text">--unstable</code> flag.).</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">deno run --allow-net --unstable app.ts</code></pre></div>
 <p>Visit the application in a browser window on port 3000.</p>
 <blockquote>
-<p>Note that if you didn't quite the previous application we built in the Web Server exercise, you may still have something running on port 3000. If that's the case, make sure you quit that process.</p>
+<p>Note that if you didn't stop the previous application we built in the Web Server exercise, you may still have something running on port 3000. If that's the case, make sure you quit that process.</p>
 </blockquote>
 <p><span
       class="gatsby-resp-image-wrapper"
