@@ -6,7 +6,7 @@ section: "1 - Welcome"
 description: "Burke covers the agenda for the Deno First Look workshop, talks about himself a little bit more than you would probably like, explains how to submit issues with this course and then pontificates on whether or not Deno is something that has a future and if we should be investing valuable time into learning it."
 ---
 
-The steps that I'll go through in this workshop are also available as a repo with exercises where you can follow along.sThe repo is called [Deno Exercises](https://github.com/burkeholland/deno-exercises). All you need to do to use it is to clone it.
+The steps that I'll go through in this workshop are also available as a repo with exercises where you can follow along. The repo is called [Deno Exercises](https://github.com/burkeholland/deno-exercises). All you need to do to use it is to clone it.
 
 ## Using the exercise project
 
@@ -16,6 +16,6 @@ Some sections build on each other. This becomes especially true when we get to t
 
 ## The Deno dev container
 
-Deno Exercises also contain a ".devcontainer" definition. What this does it preconfigures an environment where Deno is already installed and fully functional. You won't need to install anything, it will "just work".
+Deno Exercises also contain a ".devcontainer" definition. What this does it preconfigures an environment where Deno is already installed and fully functional. You won't need to install anything; it will "just work".
 
 To use this Dev Container, you need to have the [Remote-Containers extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers?WT.mc_id=devcloud_0000_buhollan), as well as Docker Desktop installed. Note that if you are on Windows, it's highly recommended that you also have WSL2 enabled as the backing subsystem for Docker.
