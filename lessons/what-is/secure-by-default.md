@@ -8,7 +8,7 @@ section: "2 - What is Deno"
 
 > Switch to the [2-secure-by-default](https://github.com/burkeholland/deno-exercises/tree/2-secure-by-default) branch in the exercises to run the code in this section
 
-Deno is secure by default. When I hear things like this, they often come off to me as esoteric and frankly paranoid reasons to write an entirely new runtime. The truth is, though, that Node.js is not a secure runtime environment. When you run a Node program on your local machine, it has all the permissions that you do. If you have the write to access a file, so does that program. And most of us as developers are have root or admin access on our own machines. Even if we don't, it would be fairly easy for an npm module with bad intentions to do some nasty damage to your machine, or worse, your production environment.
+Deno is secure by default. When I hear things like this, they often come off to me as esoteric and frankly paranoid reasons to write an entirely new runtime. The truth is, though, that Node.js is not a secure runtime environment. When you run a Node program on your local machine, it has all the permissions that you do. If you have the write to access a file, so does that program. And most of us as developers have root or admin access on our own machines. Even if we don't, it would be fairly easy for an npm module with bad intentions to do some nasty damage to your machine, or worse, your production environment.
 
 The browser is not like this. The browser is a secure sandbox that has zero access to your machine unless you grant it. Your phone is the same way. Think about it. Can apps on your phone access your location without your permission? Can they access your files and photos? No. You have to explicitly grant them the rights to do this.
 
@@ -92,7 +92,7 @@ In preparing for this course, I ran across a headline from zdnet...
 
 That's heavy. And it can happen to anyone. And if you read that article, it says that even uninstalling the module doesn't mean you are safe. Because who knows what these packages installed and ran in the background?
 
-Node.js is simply not a safe runtime. It is wide open and is based on a wide open package system. While that makes is super convenient to use, it is by definition also relatively easy for seriously bad things to happen to your programs, even when you are paying close attention. There is a direct trade-off between convenience and security. Node has optimized for convenience.
+Node.js is simply not a safe runtime. It is wide open and is based on a wide open package system. While that makes it super convenient to use, it is by definition also relatively easy for seriously bad things to happen to your programs, even when you are paying close attention. There is a direct trade-off between convenience and security. Node has optimized for convenience.
 
 Deno is secure by default. That means that by default, programs have no access to read your file system, make an http call or perform other I/O related activities on your machine. You have to explicitly grant it access. We'll see how this works when we get into the syntax of Deno. You'll also get to see this tradeoff of convenience in action and decide for yourself whether or not "secure by default" should in fact be the default.
 
