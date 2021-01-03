@@ -6,8 +6,6 @@ section: "4 - Understanding Dependencies"
 description: "Burke dives into how Deno handles dependencies."
 ---
 
-## About npm compatibility
-
 One of the first questions that might pop into your head here is that there is a problem: Node is successful due to the massive library of packages. Are those packages compatible with Deno?
 
 Probably not.

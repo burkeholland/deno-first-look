@@ -47,7 +47,7 @@ console.log(`Now listening on http://0.0.0.0:3000`);
 app.listen("0.0.0.0:3000");
 ```
 
-- Run the app with the `--allow-net`, `--unstable` and --watch flags (Oak and `--watch` both require the `--unstable` flag.).
+- Run the app with the `--allow-net`, `--unstable` and `--watch` flags.
 
 ```bash
 deno run --allow-net --unstable app.ts

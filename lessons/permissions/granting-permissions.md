@@ -8,7 +8,7 @@ description: "Burke explores the unique permissions model of Deno."
 
 > Make sure you are on the "5-granting-permissions" branch to follow along with this section.
 
-One of the core tenants of Deno is "secure by default". As we discussed in the section of the same name, this means that by default, Deno can't do very much without your permission. It can't read your file system, it can't make HTTP calls - it's completely sandboxed. 
+One of the core principals of Deno is "secure by default". As we discussed in the section of the same name, this means that by default, Deno can't do very much without your permission. It can't read your file system, it can't make HTTP calls - it's completely sandboxed.
 
 In the "app.ts" file, attempt to read all of the files in the current directory. This can be done with the "Deno" object "read" method.
 
@@ -63,7 +63,6 @@ deno run --allow-read=. app.ts
 The program now fails. This is because we didn't give it enough access. We said it could read the current directory "exercise", but the program is trying to read the parent directory.
 
 Try it again passing in the parent path...
-
 
 ```bash
 deno run --allow-read=../ app.ts

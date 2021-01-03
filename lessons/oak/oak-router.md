@@ -116,7 +116,9 @@ import { Application, Router } from "./deps.ts";
 
 ### Creating routes files
 
-In order to specify routes in the route files, we need a reference to the router object that was initialized in the "app.ts" file. Deno supports having multiple routers. The easiest way to implement this is to make each route file create and export a new router object.
+Right now, all of the routes are in the main `app.ts` file. This is fine when we only have 3 routes, but what happens when we have 100? A better solution would be to have one file per "route".
+
+For instance, we can create a file that handles all requests to "/". It doesn't matter if they are a GET, POST, PUT or if the path has a parameter on it, we can put all of that logic in a single file.
 
 - Create a folder called "routes"
 - Create a file called "indexRouter.ts" in the "routes" folder.
@@ -126,16 +128,10 @@ In order to specify routes in the route files, we need a reference to the router
 import { Router } from "deps.ts";
 ```
 
-Create a new instance of the router object
+Create a function called "use" which will accept a path and a reference to the router object. This will allow us to pass in the path we want this function to handle as well as the router object we defined in the `app.ts` file.
 
 ```typescript
-import { Router } from "deps.ts";
-```
-
-Create a function called "use" which will accept a path and a route. We'll use that path and route to configure all of the index routes.
-
-```typescript
-import { Context, Router } from "../deps.ts";
+import { Router } from "../deps.ts";
 
 export function use(path: string, router: Router) {}
 ```
@@ -143,8 +139,7 @@ export function use(path: string, router: Router) {}
 Move the index route to this new "indexRouter.ts" file
 
 ```typescript
-import { Context, Router } from "../deps.ts";
-import hbs from "../shared/hbs.ts";
+import { Router } from "../deps.ts";
 
 export function use(path: string, router: Router) {
   router.get(`${path}`, async (ctx: Context) => {

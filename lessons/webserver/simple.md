@@ -37,7 +37,7 @@ const HOSTNAME = "0.0.0.0";
 const server = serve({ hostname: HOSTNAME, port: PORT });
 ```
 
-The server is now started and listening. But it doesn't do anything because we aren't handling any requests. As awkward as this may seem, we're going to run an infinite `for` loop and handle any request that comes in by setting the `respond` property on the request.
+The server has been created, but it doesn't do anything because we aren't handling the requests. As awkward as this may seem, we're going to run an infinite `for` loop and handle any request that comes in by setting the `respond` property on the request.
 
 Use a `for` loop to start the server and listen for any incoming request. The body contains a simple response of "Hello World".
 
@@ -86,5 +86,7 @@ for await (const req of server) {
     });
 }
 ```
+
+> Make sure you restart the server. You can also run with the --watch flag so that the server is restarted every time you make changes.
 
 OK - that's about as simple a web server as we can get. Let's take a look at some common web server type scenarios.

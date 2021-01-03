@@ -28,7 +28,7 @@ How Deno handles dependencies is different based on whether or not you are using
 
 ## Getting Dependency Info
 
-As we move through the next sections, the `deno info` command may come in quite useful. By itself, the command returns the location of your Deno cache. Try it out and see what you get...
+As we move through the next sections, the `deno info` command may come in handy. By itself, the command returns the location of your Deno cache. Try it out and see what you get...
 
 ```bash
 deno info

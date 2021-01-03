@@ -72,10 +72,11 @@ You should see the following files present...
 
 - app.ts.buildinfo
 - app.ts.js
+- app.ts.js.map (This file may or may not be present. If it's not, it's because sourcemaps are included in the app.ts.js file.)
 - app.ts.meta
 - utils.ts.js
 - utils.ts.meta
 
-If you open the `app.ts.js` file, you'll see that the utils file is being included and it's output has been transpiled here. 
+If you open the `app.ts.js` file, you'll see that the utils file is being included and it's output has been transpiled here.
 
 This should look familiar based on what we reviewed during the TypeScript section. Next we'll look at how this changes (or doesn't) when you install depencies from other sources. Remote Dependencies.

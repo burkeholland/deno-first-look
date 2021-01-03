@@ -24,13 +24,21 @@ One of the beatiful things about JavaScript is that there is no _right_ way to d
 
 This is also one of the drawbacks. It makes it harder for organizations to standardize on JavaScript because they have to invent their own patterns.
 
-Strongly typed languages OO languages, by contrast, have a genuinely accepted set of patterns as laid out by books such as those laid out in the book "Design Patterns" by the notorious Gang of Four. By the way, one of those authors, Erich Gamma is the man behind VS Code. So these folks know what they are doing.
+Strongly typed object-oriented languages, by contrast, have a genuinely accepted set of patterns as laid out by books such as those laid out in the book "Design Patterns" by the notorious Gang of Four. By the way, one of those authors, Erich Gamma is the man behind VS Code. So these folks know what they are doing.
 
 ## Better Tooling
 
-VS Code provides some legit tooling for JavaScript. It's quite good and provides some things that VS Code simply cannot do with JavaScript.
+One of the primary value propositions of VS Code is it's support for TypeScript. TypeScript itself is a mature and robust language, and it's object-oriented nature allows VS Code to provide signficant tooling capabilities compared to standard JavaScript.
 
 In the "exercise" project, install the Cosmos DB package from npm. We won't be doing anything with it, but it's a great example of what benefits you can get when you adopt TypeScript as your language...
+
+Make sure that you have a `package.json` file. If you do not, initialize one.
+
+```bash
+npm init -y
+```
+
+Install the Azure Cosmos DB package from npm.
 
 ```bash
 npm i @azure/cosmos
@@ -54,7 +62,7 @@ Even better, TypeScript knows what options go in that object, what their types a
 
 Selecting an option in the intellisense tells you what it's type is and the ? on the end tells you if it's required or not.
 
-These are the kinds of things that you want in an API as a developer. Plainly put, when you're writing code, it's much easier to write JavaScript. But when you're consuming someone else's code, it's much easier if it was written in TypeScript. This is why TypeScript is great for large projects with a lot of different developers.
+These are the kinds of things that you want in an API as a developer. Plainly put, when you're writing code, it's much easier to write JavaScript. But when you're consuming someone else's code, it's much easier if it was written in TypeScript. This is why TypeScript is great for large teams working on large codebases.
 
 Note that you can get the same effect in JavaScript by including TypeScript definitions for your JavaScript. This is why you get such great tooling on a library like axios - this is the TypeScript definitions kicking in.
 
@@ -72,7 +80,7 @@ console.log(message);
 
 In order to get TypeScript to work in Node, you have to convert it to JavaScript first. This is not hard to do in VS Code. All we need to do is initialize this project with a "tsconfig" file.
 
-From your terminal, run the following in the "exercise" folder to initialize the directory as a TypeScript project...
+From your terminal, run the following in the "exercise" folder to initialize the directory as a TypeScript project. Note that you need to have [TypeScript installed globally](https://www.typescriptlang.org/download).
 
 ```bash
 tsc --init
@@ -81,6 +89,8 @@ tsc --init
 This creates a "tsconfig" file with a bunch of options. Like every option in the book. Most are commented out. It's not important here what these options are. We're just trying to see how TypeScript currently plays out in the real world so we can make a comparison with how it works in Deno.
 
 Now that "index.ts" file needs to be converted to JavaScript so we can run it with Node. To do that, Press <kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> in VS Code.
+
+> If no commands show up when you open the build menu, make sure that the .tsconfig file was created with the `tsc --init` command.
 
 Notice that VS Code automatically detects that this is a TypeScript project and gives you the option to do a build, or a watch. Go ahead and select Build.
 
@@ -104,7 +114,7 @@ In the .tsconfig file, change the "outDir" to "dist".
 "outDir": "dist"
 ```
 
-This works, except that anything that your project needs that isn't a TypeScript file ALSO needs to be copied into this dist directory. Like - say - an Express app. You'll need the templates and "public" folder from that to make sure you templates and static assets move with the project. At this point, you're probably into a build system like Gulp to try and automate this all. It can get tedious in a hurry.
+This works, except that anything that your project needs that isn't a TypeScript file ALSO needs to be copied into this dist directory. Like - say - an Express app. You'll need the templates and "public" folder from that to make sure you templates and static assets move with the project. At this point, you're probably into a build system like Gulp to try and automate this all. Simple build and copy steps can quickly balloon into tedious build setups that you would rather avoid.
 
 Now, I'm not suggesting that any of this is necessarily a bad thing. That might actually be the way things _should_ be, but, that doesn't stop it from being a drag to set up and easy to mess up.
 

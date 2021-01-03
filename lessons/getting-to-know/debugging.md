@@ -29,7 +29,7 @@ Run the program as you normally would, but this time, pass in the `--inspect` fl
 deno run --inspect app.ts World
 ```
 
-Passing the `--inspect` flag opens the debugger port. However, the program runs to completion and you never have a chance to debug it. This is because you haven't set any breakpoints and your code has no errors. The solution to this is to use the `--inspect-brk` flag instead.
+Passing the `--inspect` flag opens the debugger port. However, the program runs to completion and you don't have a chance to debug it. This is because you haven't set any breakpoints and your code has no errors. The solution to this is to use the `--inspect-brk` flag instead.
 
 Run the program again, this time passing in the `--inspect-brk` flag...
 
@@ -69,7 +69,13 @@ The Deno extension for VS Code includes a debugger. It also knows how to automat
 - Type "launch" and select "Open launch.json"
 - Select "Deno"
 
-VS Code creates a launch configuration and adds a file called `launch.json` and a folder called ".vscode". The `launch.json` file will open by default. For now, you don't need to change anything.
+VS Code creates a launch configuration and adds a file called `launch.json` and a folder called ".vscode". By default, the configuration looks for a file called `main.ts`. But in the exercise, we have called the file `app.ts`. Modify the `launch.config` file so that the `program` is `app.ts`.
+
+```json
+...,
+"program": "app.ts",
+...,
+```
 
 - Open the `app.ts` file
 - Click in the gutter next to line 1 to add a breakpoint. A red circle should appear next to the line.

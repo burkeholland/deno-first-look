@@ -97,4 +97,4 @@ deno run --allow-read app.ts
 
 The program runs and should return the path to the current directory.
 
-You've seen what you can do in Deno with just the `Deno` object. It's important to know that the Deno object has many options as you can look their first before you think you might need a dependency to do something.
+You've seen what you can do in Deno with just the `Deno` object. It's important to know that much of what you need to do with the file system is built in to the Deno object. You don't need any additional dependencies.

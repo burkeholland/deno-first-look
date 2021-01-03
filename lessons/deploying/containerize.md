@@ -6,6 +6,8 @@ section: "8 - Deploying"
 description: "Burke looks at how to deploy an application built with Deno"
 ---
 
+> Make sure you are on the 8-containerize branch to complete this section.
+
 ## Prerequisites
 
 In order to complete this section, you'll need the following installed...
@@ -42,7 +44,7 @@ First, create a file in the root of the "exercise" folder called "Dockerfile". T
 We need a base image to start from - one that has Deno in it. While Deno [doesn't yet have an "official" image](https://github.com/denoland/deno/issues/3356), most people are using an image called "hayd/docker-deno", so that's what we'll be using here. Add the following line to the top of the Dockerfile to pull in that image.
 
 ```dockerfile
-FROM hayd/alpine-deno:1.5.4
+FROM hayd/alpine-deno
 ```
 
 This image contains not only Deno, but all of the deno environment configuration that we would normally need to do to get autocompletions and the like. It also contains a default user called "deno" so that your application doesn't run as root with too many privilages.
@@ -50,7 +52,7 @@ This image contains not only Deno, but all of the deno environment configuration
 Now that we've got that image, we need to define our workdirectory - or rather - the directory where our application is going to go inside the container. You can call it anything you like. I usually just call it, "app".
 
 ```dockerfile
-FROM hayd/alpine-deno:1.5.4
+FROM hayd/alpine-deno
 
 WORKDIR /app
 ```
@@ -58,7 +60,7 @@ WORKDIR /app
 We need to specify a port for the application to run on. This is important to do because when we deploy it, the hosting provider is going to be mapping this port to some random external port so the app is exposed to the internet. We'll use port 8000 here as to be doubly sure that you don't conflict with the previous exercises which you still may have running on your machine on port 3000.
 
 ```dockerfile
-FROM hayd/alpine-deno:1.5.4
+FROM hayd/alpine-deno
 
 WORKDIR /app
 
@@ -68,7 +70,7 @@ ENV PORT=8000
 Now we need to copy in the application.
 
 ```dockerfile
-FROM hayd/alpine-deno:1.5.4
+FROM hayd/alpine-deno
 
 WORKDIR /app
 
@@ -80,7 +82,7 @@ COPY . .
 Next, run the application with the `CMD` command. This will be what actually executes when your Docker container is started.
 
 ```dockerfile
-FROM hayd/alpine-deno:1.5.4
+FROM hayd/alpine-deno
 
 WORKDIR /app
 
@@ -91,10 +93,10 @@ COPY . .
 CMD ["deno", "run", "-A", "--unstable", "app.ts"]
 ```
 
-Finally, expose the port 3000 so that the application can be accessed.
+Finally, expose the port 8000 so that the application can be accessed.
 
 ```dockerfile
-FROM hayd/alpine-deno:1.5.4
+FROM hayd/alpine-deno
 
 WORKDIR /app
 
@@ -114,7 +116,7 @@ OK! Not too bad. Let's just recap what's happening here...
 1. The PORT environment variable is specified
 1. We copy our code into the container
 1. We specify the command that runs our program
-1. We let Docker know to expose port 3000 by exposing the value of the PORT variable
+1. We let Docker know to expose port 8000 by exposing the value of the PORT variable
 
 Let's build the container.
 

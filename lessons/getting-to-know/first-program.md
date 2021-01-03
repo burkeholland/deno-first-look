@@ -69,6 +69,7 @@ Inside that folder, you will find several files...
 
 - app.ts.bundleinfo
 - app.ts.js
+- app.ts.map (if this file is not present, it's because your source maps are inline in the `app.ts.js` file which is fine.)
 - app.ts.metadata
 
 Open this folder in VS Code by executing the following command in the terminal from the same folder where these files are located.
@@ -124,7 +125,7 @@ Run the file from your terminal with Deno.
 deno run app.js
 ```
 
-Notice that there is no check this time and the result is immediate. And there is nothing in the "gen" folder because there is no generation that needs to happen.
+Notice that there is no check this time and the result is immediate.
 
 When executing JavaScript files in Node, you don't need to pass a file extension. This is why Express apps have a file called "bin/www" with no extension.
 
@@ -177,7 +178,7 @@ Windows
 C:\Users\burkeholland\AppData\Local\deno\deps\https\deno.land
 ```
 
-In that folder, provided you have never worked with Deno before, you should see 2 files both with really long names. One has no extension and the other has a `.metadata.json` extension. Something like this...
+In that folder, provided you have never worked with Deno before, you should see files with really long names. One has no extension and another has a `.metadata.json` extension. Something like this...
 
 ```bash
 d85d61a352596fd18eac16f29315093cc2e293166b66528a92e171492992f148

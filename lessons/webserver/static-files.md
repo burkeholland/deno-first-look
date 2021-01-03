@@ -37,7 +37,7 @@ This is one way to serve a static file. But Deno provides a "file server" module
 Import the "file-server" module from the Deno standard library.
 
 ```typescript
-import { serveFile } from "https://deno.land/std@0.77.0/http/file_server.ts";
+import { serveFile } from "https://deno.land/std/http/file_server.ts";
 ```
 
 Modify the `for` loop to use the `serveFile` method to serve up the "index.html" file.

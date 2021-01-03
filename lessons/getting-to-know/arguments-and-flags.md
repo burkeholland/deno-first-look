@@ -21,7 +21,7 @@ deno fmt -h
 Change the formatting in the `app.ts` file so that a default value is passed for the message if `args` doesn't exist. Make sure to use single quotes.
 
 ```typescript
-const message: String = Deno.args[0] || 'World';
+const message: String = Deno.args[0] || "World";
 console.log(`Hello ${message}`.toUpperCase());
 ```
 
@@ -132,7 +132,7 @@ Watcher Process terminated! Restarting on file change...
 
 ## Others
 
-There are other flags that can be passed in that deal with different aspects that are unique to Deno. These we will take a closer look at when we talk about concepts like dependencies and permissions. For now, the important things to know about the Deno CLI are...
+There are other flags that can be passed in that deal with different aspects that are unique to Deno. We will take a closer look at these flags when we talk about concepts like dependencies and permissions. For now, the important things to know about the Deno CLI are...
 
 1. Pass -h after any option to see a description, sample usage and sub-options
 1. Pass in all flags **before** the file name
