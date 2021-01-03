@@ -1,12 +1,12 @@
 ---
-path: "/dependencies/local-dependencies.md"
+path: "/dependencies/local-dependencies"
 title: "Local dependencies"
 order: "4B"
 section: "4 - Understanding Dependencies"
 description: "Burke dives into how Deno handles dependencies."
 ---
 
-> Make sure you are on the "4-local-depedencies" branch to follow along with this section.
+> Make sure you are on the [4-local-depedencies](https://github.com/burkeholland/deno-exercises/tree/4-local-dependencies) branch to follow along with this section.
 
 First let's look at how Deno handles local dependencies. We'll do that by creating a local dependency and importing it into our main "app.ts" file.
 
@@ -17,10 +17,10 @@ First let's look at how Deno handles local dependencies. We'll do that by creati
 
 ```typescript
 const utils = {
-    function reverse(text: string) {
-        return text.split('').reverse().join();
-    }
-}
+  reverse(text: string) {
+    return text.split("").reverse().join();
+  },
+};
 
 export default utils;
 ```
@@ -79,4 +79,4 @@ You should see the following files present...
 
 If you open the `app.ts.js` file, you'll see that the utils file is being included and it's output has been transpiled here.
 
-This should look familiar based on what we reviewed during the TypeScript section. Next we'll look at how this changes (or doesn't) when you install depencies from other sources. Remote Dependencies.
+This should look familiar based on what we reviewed during the TypeScript section. Next we'll look at how this changes (or doesn't) when you install dependencies from other sources. Remote Dependencies.

@@ -6,7 +6,7 @@ section: "5 - Permissions"
 description: "Burke explores the unique permissions model of Deno."
 ---
 
-> Make sure you are on the "5-requesting-permissions" branch to follow along with this exercise.
+> Make sure you are on the [5-requesting-permissions](https://github.com/burkeholland/deno-exercises/tree/5-requesting-permissions) branch to follow along with this exercise.
 
 Deno has a permissions API that will allow you to request certain access from your code as a library author.
 

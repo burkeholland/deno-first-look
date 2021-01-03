@@ -6,13 +6,13 @@ section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-> Make sure you are on the "7-oak-templates" branch to follow along with this section.
+> Make sure you are on the [7-oak-templates](https://github.com/burkeholland/deno-exercises/tree/7-oak-templates) branch to follow along with this section.
 
 A key benefit of web servers is being able to dynamically compose templates. In order to do that with Oak, we need to add a templating engine. In this section, we'll add the templating engine and change the router to render the template instead of just text.
 
 ## Finding a template engine
 
-Deno has a surprising amount of third-part libraries to choose from given how new it is. If we [search Deno's third party registry](https://deno.land/x?query=template) for template libraries, we see there are quite a few to choose from. This includes some well known libraries like Mustache and Handlebars. Given that I usually opt for Handlebars with Express, we'll be using that one for this Oak project.
+Deno has a surprising amount of third-party libraries to choose from given how new it is. If we [search Deno's third party registry](https://deno.land/x?query=template) for template libraries, we see there are quite a few to choose from. This includes some well known libraries like Mustache and Handlebars. Given that I usually opt for Handlebars with Express, we'll be using that one for this Oak project.
 
 ![](../images/deno-templates.jpg)
 
@@ -35,7 +35,7 @@ export { Application, Router, Handlebars };
 
 > I find it interesting that while Deno aims to avoid centralizing dependencies, it has effectively done so by creating this repository at deno.land/x. We may very well see npm again by another name.
 
-To use the Handlebars library, we need to initialize an instance and pass in some configuration. To do this, we'll create a shared object that the routers can import and then use to return template rendered views. Even though we're importing a file that calles "new" multiple times, the same instance should be reused as it is cached by the runtime.
+To use the Handlebars library, we need to initialize an instance and pass in some configuration. To do this, we'll create a shared object that the routers can import and then use to return template rendered views. Even though we're importing a file that called "new" multiple times, the same instance should be reused as it is cached by the runtime.
 
 Let's create a root folder called "shared" and add an "hbs.ts" file inside. In that file, we'll need to import the Handlebars dependency from our "deps.ts" file.
 

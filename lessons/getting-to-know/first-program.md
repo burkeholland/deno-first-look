@@ -6,7 +6,7 @@ section: "3 - Getting to know Deno"
 description: "Burke goes over how to write your first program with Deno and execute it with the Deno CLI."
 ---
 
-> Switch to the "3-your-first-program" branch to follow along with this section.
+> Switch to the [3-your-first-program](https://github.com/burkeholland/deno-exercises/tree/3-your-first-program) branch to follow along with this section.
 
 Deno programs can be written in TypeScript or JavaScript. Either will work.
 
@@ -80,11 +80,11 @@ code .
 
 This is the output of your program. The "app.ts.bundleinfo" file contains your program's build info. It has paths to TypeScript definition files.
 
-If you scroll all the way down to the bottom, you'll see an embeded ".tsconfig"
+If you scroll all the way down to the bottom, you'll see an embedded ".tsconfig"
 
 The "app.ts.js" file contains the JavaScript output of your code - minified and with sourcemaps.
 
-The `app.ts.meta` contains information concerning the version of your file. Deno is using these files to determine what dependencies your program has, what version it is, ect. We'll look at this again later on and you'll understand more about _why_ Deno is doing all of this.
+The `app.ts.meta` contains information concerning the version of your file. Deno is using these files to determine what dependencies your program has, what version it is, etc. We'll look at this again later on and you'll understand more about _why_ Deno is doing all of this.
 
 In summary, Deno is the compiler and it checks code for errors the way any strongly typed language compiler would.
 
@@ -129,20 +129,16 @@ Notice that there is no check this time and the result is immediate.
 
 When executing JavaScript files in Node, you don't need to pass a file extension. This is why Express apps have a file called "bin/www" with no extension.
 
-Deno doesn't support this and throws an error. You need to specify the file extension. This is something that will be important when we talk about dependencies as well.
+Deno supports this as well. However, it will only recognize a file as TypeScript if the file has a .ts extension. In any event, the follow code works in Node and Deno...
 
 ```bash
-node run app
+node app || deno run app
 Hello  World
-
-
-deno run app
-error: Cannot resolve module "file:///C:/dev/burkeholland/deno-first-look-windows/app"
 ```
 
 ## Executing remote scripts
 
-Deno can also execute scripts that are remote. That means that you literally call them with a URL. This is why the Deno docs have you call their sample "Hello World" program. This feels awfully unintuitive for a JavaScript developer. We explicity do **not** execute scripts from other sources because we don't know what they are going to do. But since Deno is "secure by default" as we discussed earlier, the model changes and Deno actually expects you to include code from remote locations.
+Deno can also execute scripts that are remote. That means that you literally call them with a URL. This is why the Deno docs have you call their sample "Hello World" program. This feels awfully unintuitive for a JavaScript developer. We explicitly do **not** execute scripts from other sources because we don't know what they are going to do. But since Deno is "secure by default" as we discussed earlier, the model changes and Deno actually expects you to include code from remote locations.
 
 Instead of running our local "app.ts" file, execute the remote "Hello World" example that Deno provides...
 
@@ -154,7 +150,7 @@ Check https://deno.land/std@0.76.0/examples/welcome.ts
 Welcome to Deno 🦕
 ```
 
-Notice that first Deno downloads the file, then it sends it through the compiler/transpiler, then executes it. Normally, we would consider this a highly dangerous thing to do, because we don't know what this file is or what it might attempt! But because Deno will not allow any program to access your files system, the net or do virually anything else without your permission, this is ok.
+Notice that first Deno downloads the file, then it sends it through the compiler/transpiler, then executes it. Normally, we would consider this a highly dangerous thing to do, because we don't know what this file is or what it might attempt! But because Deno will not allow any program to access your files system, the net or do virtually anything else without your permission, this is ok.
 
 But where is this file downloaded to? For that, we need to go back to the cache.
 

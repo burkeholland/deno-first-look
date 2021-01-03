@@ -6,7 +6,7 @@ section: "3 - Getting to know Deno"
 description: "Burke covers how to install Deno, and takes a look at the Deno CLI, REPL and what options you need to be aware of."
 ---
 
-Deno can be installed via cURL, Homebrew, PowerShell, Chocolatey - you name it. [Check the Deno docs](https://deno.land/#installation) for official instructions. For the sake of brevity, we'll use the cURL/Powershell commands for this class.
+Deno can be installed via cURL, Homebrew, PowerShell, Chocolatey - you name it. [Check the Deno docs](https://deno.land/#installation) for official instructions. For the sake of brevity, we'll use the cURL/PowerShell commands for this class.
 
 #### cURL
 
@@ -39,9 +39,9 @@ undefined
 >
 ```
 
-That outputs "Hello World" because we did the console.log, and then it prints "undefined" because that's the return value of the console.log method. Every method in JavaScript returns a result - even if you don't explicity do it.
+That outputs "Hello World" because we did the console.log, and then it prints "undefined" because that's the return value of the console.log method. Every method in JavaScript returns a result - even if you don't explicitly do it.
 
-Like the Node.js REPL, the Deno REPL will automatically add new lines when it sees that you are trying to write a multline program. Try creating a new function which takes in a parameter and then outputs that with the world "Hello" in front. Then return the input parameter as the output.
+Like the Node.js REPL, the Deno REPL will automatically add new lines when it sees that you are trying to write a multiline program. Try creating a new function which takes in a parameter and then outputs that with the world "Hello" in front. Then return the input parameter as the output.
 
 ```bash
 >function hello(who) {
@@ -70,10 +70,10 @@ By the way, any guesses on what language the native bindings for Deno are writte
 
 For Deno, it says right at the top, but it's more fun to look at source code, so let's do that instead.
 
-If you look at the ["core" folder](https://github.com/denoland/deno/tree/master/core) in the Deno repo, you'll see that all the files have a `.rs` extension. That file extension is for the language Rust. Rust is a language that was designed for highly safe concurrent systems. What they mean by that is that it is memory safe. It's kind of like C++, but it doesn't allow things like null pointers. And it was written by the folks at Mozilla, with some contributions from Brendan Eich - whose name might ring a bell because he's the guy who created JavaScript. So we haven't fallen too far from the Apple tree here. Node.js native bindings are written in a combination of C and C++.
+If you look at the ["core" folder](https://github.com/denoland/deno/tree/master/core) in the Deno repo, you'll see that all the files have a `.rs` extension. That file extension is for the language [Rust](https://www.rust-lang.org/). Rust is a language that was designed for highly safe concurrent systems. What they mean by that is that it is memory safe. It's kind of like C++, but it doesn't allow things like null pointers. And it was written by the folks at Mozilla, with some contributions from Brendan Eich - whose name might ring a bell because he's the guy who created JavaScript. So we haven't fallen too far from the apple tree here. Node.js native bindings are written in a combination of C and C++.
 
 You might remember I mentioned earlier that when Ryan created Node.js, he was mostly interested in I/O. That's important to note because as of right now, Node.js is faster in terms of HTTP server performance than Deno is, although according to [Deno's benchmarks](https://deno.land/benchmarks), the difference isn't stark.
 
 ![Benchmark for Deno vs Node HTTP Performance](../images/deno-vs-node-benchmarks.jpg)
 
-So, not a huge gap to close for Deno. I've often heard this complaint about Deno when comparing it to Node.js, and I'm just not sure the difference is great enough to care and certainly not a gap too big for Deno to close. And besides, most of us are not working with systems that are going to experience the kind of load that is going to necessitate agonizing over a char like the one above.
+So, not a huge gap to close for Deno. I've often heard this complaint about Deno when comparing it to Node.js, and I'm just not sure the difference is great enough to care and certainly not a gap too big for Deno to close. And besides, most of us are not working with systems that are going to experience the kind of load that is going to necessitate agonizing over a chart like the one above.

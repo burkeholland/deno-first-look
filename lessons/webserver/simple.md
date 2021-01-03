@@ -6,13 +6,13 @@ section: "6 - Building a Webserver"
 description: "Burke looks at how to build a simple web server with Deno"
 ---
 
-> Make sure you are on the "6-building-a-simple-webserver" branch to follow along with this section.
+> Make sure you are on the [6-building-a-simple-webserver](https://github.com/burkeholland/deno-exercises/tree/6-building-a-simple-webserver) branch to follow along with this section.
 
-One of the most common use-cases for a JavaScript runtime is a web server. Web servers are a common way of exposing APIs and building fullstack data-driven applications.
+One of the most common use-cases for a JavaScript runtime is a web server. Web servers are a common way of exposing APIs and building full stack data-driven applications.
 
 The Deno standard library contains a `server` module that lets you implement in a web server in just a few lines of code.
 
-first, import the `server` module from the Deno standard library into the "app.ts" file.
+First, import the `server` module from the Deno standard library into the "app.ts" file.
 
 ```typescript
 import { serve } from "https://deno.land/std/http/server.ts";
@@ -65,7 +65,7 @@ Check file:///home/burkeholland/dev/deno-first-look-exercises/app.ts
 error: Uncaught PermissionDenied: network access to "0.0.0.0:3000", run again with the --allow-net flag
 ```
 
-Run the program again with the `allow-net` flag. Be sure to restrict the access to only port 3000.
+Run the program again with the `--allow-net` flag. Be sure to restrict the access to only port 3000.
 
 ```bash
 deno run --allow-net=0.0.0.0:3000 app.ts

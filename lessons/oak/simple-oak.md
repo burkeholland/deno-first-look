@@ -6,7 +6,7 @@ section: "7 - Oak web framework"
 description: "Burke introduces the Oak web framework for Deno"
 ---
 
-> Make sure you switch to the "7-simple-oak-server" branch to follow along with this section.
+> Make sure you switch to the [7-simple-oak-server](https://github.com/burkeholland/deno-exercises/tree/7-oak-simple-server) branch to follow along with this section.
 
 Oak is a [third-party library for Deno](https://oakserver.github.io/oak/). It's just like using an npm package with Node.
 
@@ -32,7 +32,7 @@ app.use((ctx, next) => {
 });
 ```
 
-Tell the app to listen on port 3000
+Tell the app to listen on port 3000.
 
 ```typescript
 import { Application } from "https://deno.land/x/oak/mod.ts";
@@ -55,7 +55,7 @@ deno run --allow-net --unstable app.ts
 
 Visit the application in a browser window on port 3000.
 
-> Note that if you didn't quite the previous application we built in the Web Server exercise, you may still have something running on port 3000. If that's the case, make sure you quit that process.
+> Note that if you didn't stop the previous application we built in the Web Server exercise, you may still have something running on port 3000. If that's the case, make sure you quit that process.
 
 ![](../images/simple-oak-app.jpg)
 
@@ -112,4 +112,4 @@ Save the file and refresh the browser.
 
 This time, the terminal logs out the message and then the page is returned.
 
-You can write pieces of middleware that can be passed to the `app.use` function. One of these pieces of middleware that we'll be using is the Deno router. In the next section we'll look at how to implement the rouer middleware for Deno.
+You can write pieces of middleware that can be passed to the `app.use` function. One of these pieces of middleware that we'll be using is the Deno router. In the next section we'll look at how to implement the router middleware for Deno.
