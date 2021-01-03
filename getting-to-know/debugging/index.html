@@ -65,7 +65,7 @@
 <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hello </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>Run the program as you normally would, but this time, pass in the <code class="language-text">--inspect</code> flag.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">deno run --inspect app.ts World</code></pre></div>
-<p>Passing the <code class="language-text">--inspect</code> flag opens the debugger port. However, the program runs to completion and you never have a chance to debug it. This is because you haven't set any breakpoints and your code has no errors. The solution to this is to use the <code class="language-text">--inspect-brk</code> flag instead.</p>
+<p>Passing the <code class="language-text">--inspect</code> flag opens the debugger port. However, the program runs to completion and you don't have a chance to debug it. This is because you haven't set any breakpoints and your code has no errors. The solution to this is to use the <code class="language-text">--inspect-brk</code> flag instead.</p>
 <p>Run the program again, this time passing in the <code class="language-text">--inspect-brk</code> flag.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">deno run --inspect-brk app.ts World</code></pre></div>
 <p>This time, the program runs, and then pauses. Now you can attach your browser developer tools to the running program.</p>
@@ -180,7 +180,10 @@
 <li>Type "launch" and select "Open launch.json"</li>
 <li>Select "Deno"</li>
 </ul>
-<p>VS Code creates a launch configuration and adds a file called <code class="language-text">launch.json</code> and a folder called ".vscode". The <code class="language-text">launch.json</code> file will open by default. For now, you don't need to change anything.</p>
+<p>VS Code creates a launch configuration and adds a file called <code class="language-text">launch.json</code> and a folder called ".vscode". By default, the configuration looks for a file called <code class="language-text">main.ts</code>. But in the exercise, we have called the file <code class="language-text">app.ts</code>. Modify the <code class="language-text">launch.config</code> file so that the <code class="language-text">program</code> is <code class="language-text">app.ts</code>.</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json">...<span class="token punctuation">,</span>
+<span class="token property">"program"</span><span class="token operator">:</span> <span class="token string">"app.ts"</span><span class="token punctuation">,</span>
+...<span class="token punctuation">,</span></code></pre></div>
 <ul>
 <li>Open the <code class="language-text">app.ts</code> file.</li>
 <li>Click in the gutter next to line 1 to add a breakpoint. A red circle should appear next to the line.</li>

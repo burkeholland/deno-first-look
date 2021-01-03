@@ -86,7 +86,8 @@ C:\Users\burkeholland\AppData\Local\deno\gen\file\C\dev\burkeholland\deno<span c
 <ul>
 <li>app.ts.bundleinfo</li>
 <li>app.ts.js</li>
-<li>app.ts.meta</li>
+<li>app.ts.map (if this file is not present, it's because your source maps are inline in the <code class="language-text">app.ts.js</code> file which is fine.)</li>
+<li>app.ts.metadata</li>
 </ul>
 <p>Open this folder in VS Code by executing the following command in the terminal from the same folder where these files are located.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">code <span class="token builtin class-name">.</span></code></pre></div>
@@ -110,11 +111,11 @@ C:\Users\burkeholland\AppData\Local\deno\gen\file\C\dev\burkeholland\deno<span c
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>Run the file from your terminal with Deno.</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">deno run app.js</code></pre></div>
-<p>Notice that there is no check this time and the result is immediate. And there is nothing in the "gen" folder because there is no generation that needs to happen.</p>
+<p>Notice that there is no check this time and the result is immediate.</p>
 <p>When executing JavaScript files in Node, you don't need to pass a file extension. This is why Express apps have a file called "bin/www" with no extension.</p>
 <p>Deno supports this as well. However, it will only recognize a file as TypeScript if the file has a .ts extension. In any event, the follow code works in Node and Deno...</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">node app <span class="token operator">||</span> deno run app
-Hello  World    </code></pre></div>
+Hello  World</code></pre></div>
 <h2 id="executing-remote-scripts" style="position:relative;"><a href="#executing-remote-scripts" aria-label="executing remote scripts permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Executing remote scripts</h2>
 <p>Deno can also execute scripts that are remote. That means that you literally call them with a URL. This is why the Deno docs have you call their sample "Hello World" program. This feels awfully unintuitive for a JavaScript developer. We explicitly do <strong>not</strong> execute scripts from other sources because we don't know what they are going to do. But since Deno is "secure by default" as we discussed earlier, the model changes and Deno actually expects you to include code from remote locations.</p>
 <p>Instead of running our local "app.ts" file, execute the remote "Hello World" example that Deno provides...</p>
@@ -133,7 +134,7 @@ Welcome to Deno 🦕</code></pre></div>
 <p>Windows</p>
 <div class="gatsby-highlight" data-language="powershell"><pre class="language-powershell"><code class="language-powershell">/<span class="token operator">/</span> on my machine<span class="token punctuation">,</span> it looks like this<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 C:\Users\burkeholland\AppData\Local\deno\deps\https\deno<span class="token punctuation">.</span>land</code></pre></div>
-<p>In that folder, provided you have never worked with Deno before, you should see 2 files both with really long names. One has no extension and the other has a <code class="language-text">.metadata.json</code> extension. Something like this...</p>
+<p>In that folder, provided you have never worked with Deno before, you should see files with really long names. One has no extension and another has a <code class="language-text">.metadata.json</code> extension. Something like this...</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">d85d61a352596fd18eac16f29315093cc2e293166b66528a92e171492992f148
 d85d61a352596fd18eac16f29315093cc2e293166b66528a92e171492992f148.metadata.json</code></pre></div>
 <p>You can open that first file - the one without the extension - in your editor, and you'll see the code in the "welcome.ts" file that you ran from "<a href="https://deno.land/std@0.76.0/examples/welcome.ts%22..">https://deno.land/std@0.76.0/examples/welcome.ts"..</a>.</p>
